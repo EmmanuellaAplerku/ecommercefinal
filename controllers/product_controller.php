@@ -1,6 +1,6 @@
 <?php
 //connect to the user account class
-include_once("../classes/product_class.php");
+include_once (dirname(__FILE__)) . "/../classes/product_class.php";
 
 
 //--INSERT--//

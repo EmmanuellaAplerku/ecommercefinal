@@ -1,6 +1,6 @@
 <?php
 //make the controller aware of the existence of the class
-include_once('../classes/customer_class.php');
+include_once (dirname(__FILE__)) . '/../classes/customer_class.php';
 
 //--INSERT--//
 function addcustomer_ctr($fullname, $email, $password, $country, $city, $contact, $role){

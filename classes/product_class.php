@@ -3,7 +3,7 @@
 /**
  * Manages the database functions
  */
-include_once '../settings/db_class.php';
+include_once (dirname(__FILE__)) . '/../settings/db_class.php';
 
 class product_class extends db_connection
 {

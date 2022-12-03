@@ -3,7 +3,7 @@
 /**
  *
  */
-include_once '../settings/db_class.php';
+include_once (dirname(__FILE__)) . '/../settings/db_class.php';
 
 class cart_class extends db_connection
 {

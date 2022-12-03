@@ -71,28 +71,13 @@
 							<ul>
 								<li class="current-list-item"><a href="../index.php">Home</a></li>
 								<li><a href="../view/about.php">About</a></li>
-								<li><a href="#">Pages</a>
-									<ul class="sub-menu">
-										<li><a href="./view/about.php">About</a></li>
-										<li><a href="./view/cart.php">Cart</a></li>
-										<li><a href="./view/checkout.php">Check Out</a></li>
-										<li><a href="./view/contact.php">Contact</a></li>
-										<li><a href="./view/shop.php">Shop</a></li>
-									</ul>
-								</li>
 								
 								<li><a href="./view/contact.php">Contact</a></li>
 								<li><a href="shop.php">Shop</a>
-									<ul class="sub-menu">
-										<li><a href="./view/shop.php">Shop</a></li>
-										<li><a href="./view/checkout.php">Check Out</a></li>
-										<li><a href="./view/single_product.php">Single Product</a></li>
-										<li><a href="./view/cart.php">Cart</a></li>
-									</ul>
 								</li>
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="./view/cart.php"><i class="fas fa-shopping-cart"></i></a>
+										<a class="shopping-cart" href="cart.php"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 										<?php if(isset($uid) && isset($role) == '1') {
 											echo '<a href="../Login/logout.php">Logout</a>';
@@ -119,17 +104,19 @@
 					<span class="close-btn"><i class="fas fa-window-close"></i></span>
 					<div class="search-bar">
 						<div class="search-bar-tablecell">
-							<h3>Search For:</h3>
-							<input type="text" placeholder="Keywords">
-							<button type="submit">Search <i class="fas fa-search"></i></button>
+							<form method=POST action="search_product.php">
+								<h3>Search For:</h3>
+								<input type="text" name="searchtitle" placeholder="Keywords">
+								<button  type="submit">Search <i class="fas fa-search"></i></button>
+							</form>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- end search arewa -->
-	
+	<!-- end search area -->
+
 	<!-- breadcrumb-section -->
 	<div class="breadcrumb-section breadcrumb-bg">
 		<div class="container">
@@ -160,6 +147,7 @@
 									<th class="product-name">Name</th>
 									<th class="product-price">Price</th>
 									<th class="product-quantity">Quantity</th>
+									<th class="product-quantity"></th>
 									<th class="product-total">Sub Total</th>
 								
 
@@ -178,7 +166,9 @@
 				$total = $total;
 				?>
 							<tbody>
+								<form method=POST action="../actions/manage_quantity.php">
 								<tr class="table-body-row">
+									<input type="hidden" name="prod_id" value="<?php echo $product['product_id'] ?>">
 									<td class="product-remove"><a href="<?php echo "../actions/remove_from_cart.php?deletePID=" . $product['product_id']; ?>"><i class="far fa-window-close"></i></a></td>
 									<td class="product-image"><img src="<?php echo $product['product_image']; ?>" alt=""></td>
 									<td class="product-name"> <?php
@@ -190,12 +180,14 @@
                                     	echo $product['product_price'];
                                     	?>
 										</td>
-									<td class="product-quantity"><input type="number" placeholder="0" value=<?php echo $qty ?>></td>
-									<td class="product-total"><?php echo $subTotal?></td>
+										<td class="product-quantity"><input type="number" name="qty" placeholder="0" value=<?php echo $qty ?>></td>
+										<td class="product-quantity">
+											<input class="btn black" type="submit" name="updateQty" value="Update">
+										</td>
+										<td class="product-total"><?php echo $subTotal?></td>
+									</form>
 									
 								</tr>
-								
-								
 							</tbody>
 							<?php
 			}

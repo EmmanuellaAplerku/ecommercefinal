@@ -1,3 +1,12 @@
+<?php
+include 'settings/core.php';
+require 'controllers/product_controller.php';
+$uid = $_SESSION['customer_id'];
+$role = $_SESSION['role'];
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,28 +72,14 @@
 									
 								</li>
 								<li><a href="./view/about.php">About</a></li>
-								<li><a href="#">Pages</a>
-									<ul class="sub-menu">
-										<li><a href="./view/about.php">About</a></li>
-										<li><a href="./view/cart.php">Cart</a></li>
-										<li><a href="./view/checkout.php">Check Out</a></li>
-										<li><a href="./view/contact.php">Contact</a></li>
-										<li><a href="./view/shop.php">Shop</a></li>
-									</ul>
-								</li>
 								
 								<li><a href="./view/contact.php">Contact</a></li>
 								<li><a href="./view/shop.php">Shop</a>
-									<ul class="sub-menu">
-										<li><a href="./view/shop.php">Shop</a></li>
-										<li><a href="./view/checkout.php">Check Out</a></li>
-										<li><a href="./view/single_product.php">Single Product</a></li>
-										<li><a href="./view/cart.php">Cart</a></li>
-									</ul>
+									
 								</li>
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="cart.php"><i class="fas fa-shopping-cart"></i></a>
+										<a class="shopping-cart" href="./view/cart.php"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 										<?php if(isset($uid) && isset($role) == '1') {
 											echo '<a href="../Login/logout.php">Logout</a>';

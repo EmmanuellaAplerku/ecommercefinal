@@ -1,3 +1,11 @@
+<?php
+include ('../settings/core.php');
+require '../controllers/product_controller.php';
+$uid = $_SESSION['customer_id'];
+$role = $_SESSION['role'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,26 +70,10 @@
 								<li class="current-list-item"><a href="../index.php">Home</a>
 								</li>
 								<li><a href="about.php">About</a></li>
-								<li><a href="#">Pages</a>
-									<ul class="sub-menu">
-										<li><a href="404.php">404 page</a></li>
-										<li><a href="about.php">About</a></li>
-										<li><a href="cart.php">Cart</a></li>
-										<li><a href="checkout.php">Check Out</a></li>
-										<li><a href="contact.php">Contact</a></li>
-										<li><a href="news.php">News</a></li>
-										<li><a href="shop.php">Shop</a></li>
-									</ul>
-								</li>
 								
-								<li><a href="contact.html">Contact</a></li>
-								<li><a href="shop.html">Shop</a>
-									<ul class="sub-menu">
-										<li><a href="shop.php">Shop</a></li>
-										<li><a href="checkout.php">Check Out</a></li>
-										<li><a href="single-product.php">Single Product</a></li>
-										<li><a href="cart.php">Cart</a></li>
-									</ul>
+								
+								<li><a href="contact.php">Contact</a></li>
+								<li><a href="shop.php">Shop</a>
 								</li>
 								<li>
 									<div class="header-icons">
@@ -112,24 +104,26 @@
 					<span class="close-btn"><i class="fas fa-window-close"></i></span>
 					<div class="search-bar">
 						<div class="search-bar-tablecell">
-							<h3>Search For:</h3>
-							<input type="text" placeholder="Keywords">
-							<button type="submit">Search <i class="fas fa-search"></i></button>
+							<form method=POST action="search_product.php">
+								<h3>Search For:</h3>
+								<input type="text" name="searchtitle" placeholder="Keywords">
+								<button  type="submit">Search <i class="fas fa-search"></i></button>
+							</form>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- end search arewa -->
-	
+	<!-- end search area -->
+
 	<!-- breadcrumb-section -->
 	<div class="breadcrumb-section breadcrumb-bg">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
-						<p>We sale fresh fruits</p>
+						<p>We offer writing services</p>
 						<h1>About Us</h1>
 					</div>
 				</div>
@@ -144,18 +138,9 @@
 			<div class="row">
 				<div class="col-lg-7">
 					<div class="featured-text">
-						<h2 class="pb-3">Why <span class="orange-text">Fruitkha</span></h2>
+						<h2 class="pb-3">Why <span class="orange-text">Revamp'D</span></h2>
 						<div class="row">
-							<div class="col-lg-6 col-md-6 mb-4 mb-md-5">
-								<div class="list-box d-flex">
-									<div class="list-icon">
-										<i class="fas fa-shipping-fast"></i>
-									</div>
-									<div class="content">
-										<h3>Home Delivery</h3>
-										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
-									</div>
-								</div>
+							
 							</div>
 							<div class="col-lg-6 col-md-6 mb-5 mb-md-5">
 								<div class="list-box d-flex">
@@ -164,7 +149,7 @@
 									</div>
 									<div class="content">
 										<h3>Best Price</h3>
-										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+										<p>We bring you quality writing services at affordable prices</p>
 									</div>
 								</div>
 							</div>
@@ -174,8 +159,8 @@
 										<i class="fas fa-briefcase"></i>
 									</div>
 									<div class="content">
-										<h3>Custom Box</h3>
-										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+										<h3>Custom Services</h3>
+										<p>Our services can be tailored to your needs.</p>
 									</div>
 								</div>
 							</div>
@@ -185,8 +170,8 @@
 										<i class="fas fa-sync-alt"></i>
 									</div>
 									<div class="content">
-										<h3>Quick Refund</h3>
-										<p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+										<h3>Quick Services</h3>
+										<p> We always value your time and deliver prompt services</p>
 									</div>
 								</div>
 							</div>
@@ -206,7 +191,7 @@
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="section-title">
 						<h3>Our <span class="orange-text">Team</span></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
+						<p>We a solid team of three providing you with the best services ever</p>
 					</div>
 				</div>
 			</div>
@@ -356,7 +341,7 @@
 					<div class="footer-box pages">
 						<h2 class="widget-title">Pages</h2>
 						<ul>
-							<li><a href="index.html">Home</a></li>
+							<li><a href="index.php">Home</a></li>
 							<li><a href="about.html">About</a></li>
 							<li><a href="services.html">Shop</a></li>
 							<li><a href="news.html">News</a></li>

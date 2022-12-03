@@ -1,3 +1,13 @@
+<?php
+include '../settings/core.php';
+require '../controllers/product_controller.php';
+$uid = $_SESSION['customer_id'];
+$role = $_SESSION['role'];
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -118,16 +128,18 @@
 					<span class="close-btn"><i class="fas fa-window-close"></i></span>
 					<div class="search-bar">
 						<div class="search-bar-tablecell">
-							<h3>Search For:</h3>
-							<input type="text" placeholder="Keywords">
-							<button type="submit">Search <i class="fas fa-search"></i></button>
+							<form method=POST action="search_product.php">
+								<h3>Search For:</h3>
+								<input type="text" name="searchtitle" placeholder="Keywords">
+								<button  type="submit">Search <i class="fas fa-search"></i></button>
+							</form>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- end search arewa -->
+	<!-- end search area -->
 	
 	<!-- breadcrumb-section -->
 	<div class="breadcrumb-section breadcrumb-bg">

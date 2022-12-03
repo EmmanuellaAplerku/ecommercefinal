@@ -1,6 +1,8 @@
 <?php
 include '../settings/core.php';
 require '../controllers/product_controller.php';
+$uid = $_SESSION['customer_id'];
+$role = $_SESSION['role'];
 
 // $custid = $_GET['customer_id'];
 ?>
@@ -57,7 +59,7 @@ require '../controllers/product_controller.php';
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="index.html">
+							<a href="index.php">
 								<img src="assets/img/logo.png" alt="">
 							</a>
 						</div>
@@ -69,32 +71,16 @@ require '../controllers/product_controller.php';
 								<li class="current-list-item"><a href="../index.php">Home</a>
 									
 								</li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="#">Pages</a>
-									<ul class="sub-menu">
-										
-										<li><a href="about.php">About</a></li>
-										<li><a href="cart.php">Cart</a></li>
-										<li><a href="checkout.php">Check Out</a></li>
-										<li><a href="contact.php">Contact</a></li>
-										
-										<li><a href="shop.php">Shop</a></li>
-									</ul>
-								</li>
+								<li><a href="about.php">About</a></li>
 								
-								<li><a href="../view/contact.php">Contact</a></li>
-								<li><a href="../view/shop.php">Shop</a>
-									<ul class="sub-menu">
-										<li><a href="shop.php">Shop</a></li>
-										<li><a href="checkout.php">Check Out</a></li>
-										<li><a href="single_product.php">Single Product</a></li>
-										<li><a href="cart.php">Cart</a></li>
-									</ul>
+								
+								<li><a href="contact.php">Contact</a></li>
+								<li><a href="shop.php">Shop</a>
 								</li>
 								<li>
 									<div class="header-icons">
 										<a class="shopping-cart" href="cart.php"><i class="fas fa-shopping-cart"></i></a>
-										<a class="mobile-hide search-bar-icon" href="search_product.php"><i class="fas fa-search"></i></a>
+										<a class="mobile-hide search-bar-icon" ><i class="fas fa-search"></i></a>
 										<?php if(isset($uid) && isset($role) == '1') {
 											echo '<a href="../Login/logout.php">Logout</a>';
 										} ?>
@@ -120,16 +106,18 @@ require '../controllers/product_controller.php';
 					<span class="close-btn"><i class="fas fa-window-close"></i></span>
 					<div class="search-bar">
 						<div class="search-bar-tablecell">
-							<h3>Search For:</h3>
-							<input type="text" placeholder="Keywords">
-							<button type="submit">Search <i class="fas fa-search"></i></button>
+							<form method=POST action="search_product.php">
+								<h3>Search For:</h3>
+								<input type="text" name="searchtitle" placeholder="Keywords">
+								<button  type="submit">Search <i class="fas fa-search"></i></button>
+							</form>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- end search arewa -->
+	<!-- end search area -->
 	
 	<!-- breadcrumb-section -->
 	<div class="breadcrumb-section breadcrumb-bg">
@@ -172,7 +160,7 @@ require '../controllers/product_controller.php';
 				<div class="col-lg-4 col-md-6 text-center strawberry">
 					<div class="single-product-item">
 						<div class="product-image" style="border: 1px solid black; height: 250px; margin-bottom: 30px;">
-							<a href="single_product.php"><img style="width: 100%; height: 100%; object-fit: cover;" src="<?php echo $item['product_image']; ?>" alt=""></a>
+							<a href="single_product.php?product_id=<?php echo $item['product_id']?>"><img style="width: 100%; height: 100%; object-fit: cover;" src="<?php echo $item['product_image']; ?>" alt=""></a>
 						</div>
 						<h3><?php
 											

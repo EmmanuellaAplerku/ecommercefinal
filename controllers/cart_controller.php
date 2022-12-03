@@ -1,5 +1,5 @@
 <?php
-include_once("../classes/cart_class.php");
+include_once (dirname(__FILE__)) . "/../classes/cart_class.php";
 
 //Function to add to the cart
 function add_to_cart_ctr($pid,$cid,$quantity){
