@@ -159,8 +159,8 @@ $role = $_SESSION['role'] ?? null;
 										<i class="fas fa-briefcase"></i>
 									</div>
 									<div class="content">
-										<h3>Custom Services</h3>
-										<p>Our services can be tailored to your needs.</p>
+										<h3>High Success Rate</h3>
+										<p>About 95% of our customers chalk successes </p>
 									</div>
 								</div>
 							</div>

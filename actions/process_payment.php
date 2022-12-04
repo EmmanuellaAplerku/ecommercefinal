@@ -25,7 +25,7 @@ if ($reference === "") {
    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
    CURLOPT_CUSTOMREQUEST => "GET",
    CURLOPT_HTTPHEADER => array(
-     "Authorization: Bearer sk_test_74da77c6fdee6596925a318bfc3421b8f55a919f",
+     "Authorization: Bearer sk_live_497a3a223893acf3ff8ecfd4dce1158b2fc9b088",
      "Cache-Control: no-cache",
    ),
  ));
