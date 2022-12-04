@@ -111,14 +111,16 @@ function aplerkuPaystack() {
       let message = 'Payment complete! Reference: ' + response.reference;
       alert(message);
 
-        $.ajax({
-                url: '../actions/process_payment.php'+ response.reference,
-                method: 'get',
-                success: function (response) {
-                 // the transaction status is in response.data.status
-                  alert(response);
-                 }
-               });
+      window.location = '../actions/process_payment.php?reference='+ response.reference
+
+        // $.ajax({
+        //         url: '../actions/process_payment.php?reference='+ response.reference,
+        //         method: 'post',
+        //         success: function (response) {
+        //          // the transaction status is in response.data.status
+        //           alert(response);
+        //          }
+        //        });
 
 
     }

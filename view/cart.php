@@ -1,12 +1,13 @@
 <?php
-	require('../settings/core.php');
+	include_once('../settings/core.php');
 	include '../controllers/cart_controller.php';
-	$uid = $_SESSION['customer_id'];
-	$role = $_SESSION['role'];
+	$uid = check_login();
+	// $role = inspect_admin() ;
 	$subTotal = 0.0;
 	$total = 0.0;
-?>
+	$selectedproduct = select_all_cart_ctr($uid);
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,7 +52,6 @@
     </div>
     <!--PreLoader Ends-->
 	
-	
 	<!-- header -->
 	<div class="top-header-area" id="sticker">
 		<div class="container">
@@ -72,16 +72,16 @@
 								<li class="current-list-item"><a href="../index.php">Home</a></li>
 								<li><a href="../view/about.php">About</a></li>
 								
-								<li><a href="./view/contact.php">Contact</a></li>
+								
 								<li><a href="shop.php">Shop</a>
 								</li>
 								<li>
 									<div class="header-icons">
 										<a class="shopping-cart" href="cart.php"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-										<?php if(isset($uid) && isset($role) == '1') {
+										<!-- <?php if(isset($uid) && isset($role) == '1') {
 											echo '<a href="../Login/logout.php">Logout</a>';
-										} ?>
+										} ?> -->
 									</div>
 								</li>
 							</ul>
@@ -153,8 +153,8 @@
 
 								</tr>
 							</thead>
+							<tbody>
 							<?php
-            $selectedproduct = select_all_cart_ctr($uid);
             // print_r($selectedproduct);
             foreach ($selectedproduct as $product) {
 				$sub = $product['product_price' ] * $product['qty'];
@@ -165,7 +165,6 @@
 				$subTotal = $sub;
 				$total = $total;
 				?>
-							<tbody>
 								<form method=POST action="../actions/manage_quantity.php">
 								<tr class="table-body-row">
 									<input type="hidden" name="prod_id" value="<?php echo $product['product_id'] ?>">
@@ -188,10 +187,10 @@
 									</form>
 									
 								</tr>
-							</tbody>
 							<?php
 			}
 	?>
+							</tbody>
 						</table>
 					</div>
 				</div>
@@ -284,8 +283,8 @@
 							<li><a href="index.php">Home</a></li>
 							<li><a href="about.php">About</a></li>
 							<li><a href="services.php">Shop</a></li>
-							<li><a href="news.php">News</a></li>
-							<li><a href="contact.php">Contact</a></li>
+							
+							
 						</ul>
 					</div>
 				</div>

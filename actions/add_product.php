@@ -75,44 +75,7 @@ if (isset($_POST['updateProduct'])) {
     $product_desc = $_POST['prod_desc'];
     $product_key = $_POST['prod_key'];
     $prod_id = $_POST['p_id'];
-    //$product_image = NULL;
-
-    //$product_image = $_FILES['prod_image']["tmp_name"];
-
-    // $file = $_FILES['image'];
-    // $filename = $_FILES['image']['name'];
-    // $fileTmpName = $_FILES['image']['tmp_name'];
-    // $fileSize = $_FILES['image']['size'];
-    // $fileError = $_FILES['image']['error'];
-    // $FileType = $_FILES['image']['type'];
-
-    // $fileExt = explode('.', $filename);
-    // $fileActualExt = strtolower(end($fileExt));
-
-    // selecting the type of file
-    $permit = ['jpg', 'jpeg', 'png', 'pdf'];
-
-    // checking the type of file
-    // if (in_array($fileActualExt, $permit)) {
-    //     if ($fileError === 0) {
-    //         if ($fileSize < 5000000000) {
-    //             $fileNameNew = uniqid('', true) . '.' . $fileActualExt;
-    //             $fileDestination = '../assets/img/products/' . $fileNameNew;
-    //             $move = move_uploaded_file($fileTmpName, $fileDestination);
-    //             if ($move) {
-                    
-    //             } else {
-    //                 echo 'not working';
-    //             }
-    //         } else {
-    //             echo 'The file is large';
-    //         }
-    //     } else {
-    //         echo 'An error occurred while uploading your file';
-    //     }
-    // } else {
-    //     echo 'Unfortunately you cannot upload this kind of file';
-    // }
+    
     $addprod = update_product_ctr(
         $prod_id,
         $product_cat,

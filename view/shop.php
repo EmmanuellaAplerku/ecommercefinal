@@ -1,10 +1,9 @@
 <?php
-include '../settings/core.php';
+include ('../settings/core.php');
 require '../controllers/product_controller.php';
-$uid = $_SESSION['customer_id'];
-$role = $_SESSION['role'];
+$uid = $_SESSION['customer_id'] ?? null;
+$role = $_SESSION['role'] ?? null;
 
-// $custid = $_GET['customer_id'];
 ?>
 
 <!DOCTYPE html>
@@ -74,7 +73,7 @@ $role = $_SESSION['role'];
 								<li><a href="about.php">About</a></li>
 								
 								
-								<li><a href="contact.php">Contact</a></li>
+							
 								<li><a href="shop.php">Shop</a>
 								</li>
 								<li>
@@ -159,7 +158,7 @@ $role = $_SESSION['role'];
 	foreach ($datafound as $item) { ?>
 				<div class="col-lg-4 col-md-6 text-center strawberry">
 					<div class="single-product-item">
-						<div class="product-image" style="border: 1px solid black; height: 250px; margin-bottom: 30px;">
+						<div class="product-image" style="height: 250px; margin-bottom: 30px;">
 							<a href="single_product.php?product_id=<?php echo $item['product_id']?>"><img style="width: 100%; height: 100%; object-fit: cover;" src="<?php echo $item['product_image']; ?>" alt=""></a>
 						</div>
 						<h3><?php
@@ -232,16 +231,16 @@ $role = $_SESSION['role'];
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box about-widget">
 						<h2 class="widget-title">About us</h2>
-						<p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+						<p>Revamp'd is a career development organization that focuses on equipping young individuals with the necessary skills to take their careers to the next level</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box get-in-touch">
 						<h2 class="widget-title">Get in Touch</h2>
 						<ul>
-							<li>34/8, East Hukupara, Gifirtok, Sadan.</li>
-							<li>support@fruitkha.com</li>
-							<li>+00 111 222 3333</li>
+							
+							<li>revampwithd@gmail.com</li>
+							
 						</ul>
 					</div>
 				</div>
@@ -250,10 +249,9 @@ $role = $_SESSION['role'];
 						<h2 class="widget-title">Pages</h2>
 						<ul>
 							<li><a href="index.php">Home</a></li>
-							<li><a href="about.php">About</a></li>
-							<li><a href="services.php">Shop</a></li>
-						
-							<li><a href="contact.php">Contact</a></li>
+							<li><a href="./view/about.php">About</a></li>
+							<li><a href=".view/shop.php">Shop</a></li>
+							
 						</ul>
 					</div>
 				</div>
@@ -261,7 +259,7 @@ $role = $_SESSION['role'];
 					<div class="footer-box subscribe">
 						<h2 class="widget-title">Subscribe</h2>
 						<p>Subscribe to our mailing list to get the latest updates.</p>
-						<form action="index.html">
+						<form action="index.php">
 							<input type="email" placeholder="Email">
 							<button type="submit"><i class="fas fa-paper-plane"></i></button>
 						</form>
@@ -277,18 +275,17 @@ $role = $_SESSION['role'];
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2019 - <a href="https://imransdesign.com/">Imran Hossain</a>,  All Rights Reserved.<br>
-						Distributed By - <a href="https://themewagon.com/">Themewagon</a>
+					<p>Copyrights &copy; 2021 -   All Rights Reserved.<br>
+						Powered By - Revamp'D
 					</p>
 				</div>
 				<div class="col-lg-6 text-right col-md-12">
 					<div class="social-icons">
 						<ul>
-							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+							
 							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li>
+							
+							
 						</ul>
 					</div>
 				</div>

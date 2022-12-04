@@ -1,9 +1,9 @@
 <?php
 include 'settings/core.php';
 require 'controllers/product_controller.php';
-$uid = $_SESSION['customer_id'];
-$role = $_SESSION['role'];
-
+$uid = $_SESSION['customer_id'] ?? null;
+$role = $_SESSION['role'] ?? null;
+$image = './assets/img/products/';
 ?>
 
 
@@ -73,7 +73,7 @@ $role = $_SESSION['role'];
 								</li>
 								<li><a href="./view/about.php">About</a></li>
 								
-								<li><a href="./view/contact.php">Contact</a></li>
+								
 								<li><a href="./view/shop.php">Shop</a>
 									
 								</li>
@@ -82,7 +82,7 @@ $role = $_SESSION['role'];
 										<a class="shopping-cart" href="./view/cart.php"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 										<?php if(isset($uid) && isset($role) == '1') {
-											echo '<a href="../Login/logout.php">Logout</a>';
+											echo '<a href="./Login/logout.php">Logout</a>';
 										} ?>
 									</div>
 								</li>
@@ -146,7 +146,7 @@ $role = $_SESSION['role'];
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
 					<div class="abt-bg">
-						<a href="https://www.youtube.com/watch?v=DBLlFWYcIGQ" class="video-play-btn popup-youtube"><i class="fas fa-play"></i></a>
+						<img src="./assets/img/revampedlogo.jpg" alt="">
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-12">
@@ -167,44 +167,57 @@ $role = $_SESSION['role'];
 	<!-- product section -->
 	<div class="product-section mt-150 mb-150">
 		<div class="container">
+
 			<div class="row">
-				<div class="col-lg-8 offset-lg-2 text-center">
-					<div class="section-title">	
-						<h3><span class="orange-text">Our</span> Services</h3>
-						
+                <div class="col-md-12">
+                    <div class="product-filters">
+                        <!-- <ul>
+                            <li class="active" data-filter="*">All</li>
+                            <li data-filter=".strawberry">Strawberry</li>
+                            <li data-filter=".berry">Berry</li>
+                            <li data-filter=".lemon">Lemon</li>
+                        </ul> -->
+                    </div>
+                </div>
+            </div>
+
+			<div class="row product-lists">
+			<?php 
+	$datafound = select_all_products_ctr(); 
+				
+	foreach ($datafound as $item) { ?>
+				<div class="col-lg-4 col-md-6 text-center strawberry">
+					<div class="single-product-item">
+						<div class="product-image" style="height: 250px; margin-bottom: 30px;">
+							<a href="./view/single_product.php?product_id=<?php echo $item['product_id']?>"><img style="width: 100%; height: 100%; object-fit: cover;" src="<?php echo $image . basename($item['product_image']); ?>" alt=""></a>
+						</div>
+						<h3><?php
+											
+											echo $item['product_title'];
+											?></h3>
+						<p class="product-price"><span><?php
+										echo 'GHS';
+										echo $item['product_price'];
+										?></span>  </p>
+						<a href="./actions/add_to_cart.php?product_id=<?php echo $item['product_id']?>" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
 					</div>
 				</div>
+				<?php } ?>
+				
+				
+				
 			</div>
 
 			<div class="row">
-				<div class="col-lg-4 col-md-6 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.php"><img src="assets/img/products/product-img-1.jpg" alt=""></a>
-						</div>
-						<h3>Strawberry</h3>
-						<p class="product-price"><span>Per Kg</span> 85$ </p>
-						<a href="./view/cart.php" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.php"><img src="assets/img/products/product-img-2.jpg" alt=""></a>
-						</div>
-						<h3>Berry</h3>
-						<p class="product-price"><span>Per Kg</span> 70$ </p>
-						<a href="./view/cart.php" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.php"><img src="assets/img/products/product-img-3.jpg" alt=""></a>
-						</div>
-						<h3>Lemon</h3>
-						<p class="product-price"><span>Per Kg</span> 35$ </p>
-						<a href="./view/cart.php" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+				<div class="col-lg-12 text-center">
+					<div class="pagination-wrap">
+						<!-- <ul>
+							<li><a href="#">Prev</a></li>
+							<li><a href="#">1</a></li>
+							<li><a class="active" href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">Next</a></li>
+						</ul> -->
 					</div>
 				</div>
 			</div>
@@ -282,16 +295,16 @@ $role = $_SESSION['role'];
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box about-widget">
 						<h2 class="widget-title">About us</h2>
-						<p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+						<p>Revamp'd is a career development organization that focuses on equipping young individuals with the necessary skills to take their careers to the next level</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box get-in-touch">
 						<h2 class="widget-title">Get in Touch</h2>
 						<ul>
-							<li>34/8, East Hukupara, Gifirtok, Sadan.</li>
-							<li>support@fruitkha.com</li>
-							<li>+00 111 222 3333</li>
+							
+							<li>revampwithd@gmail.com</li>
+							
 						</ul>
 					</div>
 				</div>
@@ -300,10 +313,9 @@ $role = $_SESSION['role'];
 						<h2 class="widget-title">Pages</h2>
 						<ul>
 							<li><a href="index.php">Home</a></li>
-							<li><a href="about.php">About</a></li>
-							<li><a href="services.php">Shop</a></li>
-							<li><a href="news.php">News</a></li>
-							<li><a href="contact.php">Contact</a></li>
+							<li><a href="./view/about.php">About</a></li>
+							<li><a href=".view/shop.php">Shop</a></li>
+							
 						</ul>
 					</div>
 				</div>
@@ -334,9 +346,9 @@ $role = $_SESSION['role'];
 				<div class="col-lg-6 text-right col-md-12">
 					<div class="social-icons">
 						<ul>
-							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+							
 							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+							
 							
 						</ul>
 					</div>

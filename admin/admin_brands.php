@@ -31,80 +31,83 @@ if (isset($_SESSION['role']) == '1') {
     <body>
         <!-- user profile -->
         <div class="us_container">
-            <div class="sidebar">
+        <div class="sidebar">
                 <div class="content">
 
-                    <div class="logo">
-                        <img src="../assets/logo.png" alt="">
+                    <div class="logo" style="padding: 20px 0; color:white;">
+                        <h1>REVAMP'D</h1>
                     </div>
 
                     <!-- menu -->
                     <p class="sm">Menu</p>
 
+
                     <div class="menuItems">
                         <a href="./admin_main.php" class="menuItem">
                             <div class="icon">
-                                <img src="../assets/icons/bx_bxs-dashboard-white.svg" alt="">
+                                <!-- icon -->
+                                <i class='bx bxs-dashboard'></i>
+
                             </div>
                             <p class="m_name">Dashboard</p>
                         </a>
                         <a href="./admin_orders.php" class="menuItem">
                             <div class="icon">
-                                <img src="../assets/icons/mdi_package-white.svg" alt="">
+                                <i class='bx bx-store-alt'></i>
                             </div>
                             <p class="m_name">Orders</p>
                         </a>
 
-                        <button class="accordion"> <img src="../assets/icons/dashicons_products.svg" alt=""> Products</button>
-                        <div class="panel">
-                            <a href="./admin_viewproduct.php" class="menuItem">
-                                <div class="icon">
-                                    <img src="../assets/icons/eye.svg" alt="">
-                                </div>
-                                <p class="m_name">View Product</p>
-                            </a>
-                            <a href="./admin_addproducts.php" class="menuItem">
-                                <div class="icon">
-                                    <img src="../assets/icons/akar-icons_plus-white.svg" alt="">
-                                </div>
-                                <p class="m_name">AddProduct</p>
-                            </a>
-                            
-                            <a href="./admin_brands.php" class="menuItem active">
-                                <div class="icon">
-                                    <img src="../assets/icons/ic_baseline-review-white.svg" alt="">
-                                </div>
-                                <p class="m_name">Brands</p>
-                            </a>
-                            <a href="./admin_categories.php" class="menuItem">
-                                <div class="icon">
-                                    <img src="../assets/icons/bx_bxs-category-alt.svg" alt="">
-                                </div>
-                                <p class="m_name">Categories</p>
-                            </a>
-                        </div>
+
+                        <a href="./admin_viewproduct.php" class="menuItem">
+                            <div class="icon">
+                            <i class='bx bx-show'></i>
+                                <!--  -->
+                            </div>
+                            <p class="m_name">View Product</p>
+                        </a>
+                        <a href="./admin_addproducts.php" class="menuItem">
+                            <div class="icon">
+                            <i class='bx bx-message-square-add'></i>
+                                <!--  -->
+                            </div>
+                            <p class="m_name">Add Product</p>
+                        </a>
+
+                        <a href="./admin_brands.php" class="menuItem active">
+                            <div class="icon">
+                            <i class='bx bxl-unity'></i>
+                                <!-- <img src="../assets/icons/ic_baseline-review-white.svg" alt=""> -->
+                            </div>
+                            <p class="m_name">Brands</p>
+                        </a>
+                        <a href="./admin_categories.php" class="menuItem">
+                            <div class="icon">
+                            <i class='bx bxs-customize'></i>
+                                <!-- <img src="../assets/icons/bx_bxs-category-alt.svg" alt=""> -->
+                            </div>
+                            <p class="m_name">Categories</p>
+                        </a>
 
                         <a href="./admin_customers.php" class="menuItem">
                             <div class="icon">
-                                <img src="../assets/icons/bi_people-fill.svg" alt="">
+                            <i class='bx bxs-user'></i>
+                                <!-- <img src="../assets/icons/bi_people-fill.svg" alt=""> -->
                             </div>
                             <p class="m_name">Customers</p>
                         </a>
                         <a href="./admin_payments.php" class="menuItem">
                             <div class="icon">
-                                <img src="../assets/icons/fluent_payment-24-filled-white.svg" alt="">
+                            <i class='bx bxs-discount'></i>
+                                <!-- <img src="../assets/icons/fluent_payment-24-filled-white.svg" alt=""> -->
                             </div>
                             <p class="m_name">Payments</p>
                         </a>
-                        <a href="./admin_ac-settings.php" class="menuItem">
-                            <div class="icon">
-                                <img src="../assets/icons/clarity_settings-solid-white.svg" alt="">
-                            </div>
-                            <p class="m_name">Settings</p>
-                        </a>
+
                         <a href="../Login/logout.php" class="menuItem">
                             <div class="icon">
-                                <img src="../assets/icons/ri_logout-circle-fill.svg" alt="">
+                            <i class='bx bxs-user-minus'></i>
+                                <!-- <img src="../assets/icons/ri_logout-circle-fill.svg" alt=""> -->
                             </div>
                             <p class="m_name">Logout</p>
                         </a>

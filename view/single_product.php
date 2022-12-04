@@ -1,8 +1,8 @@
 <?php
 include ("../settings/core.php");
 require("../controllers/product_controller.php");
-$uid = $_SESSION['customer_id'];
-$role = $_SESSION['role'];
+$uid = $_SESSION['customer_id'] ?? null;
+$role = $_SESSION['role'] ?? null;
 
 $product_id = $_GET['product_id'];
 $product = select_one_product_ctr($product_id);
@@ -78,7 +78,7 @@ $product = select_one_product_ctr($product_id);
 								<li><a href="../view/about.php">About</a></li>
 								
 								
-								<li><a href="../view/contact.php">Contact</a></li>
+								
 								<li><a href="../view/shop.php">Shop</a>
 									<ul class="sub-menu">
 										<li><a href="../view/shop.php">Shop</a></li>
@@ -89,7 +89,7 @@ $product = select_one_product_ctr($product_id);
 								</li>
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="../view/cart.html"><i class="fas fa-shopping-cart"></i></a>
+										<a class="shopping-cart" href="../view/cart.php"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 										<?php if(isset($uid) && isset($role) == '1') {
 											echo '<a href="../Login/logout.php">Logout</a>';
@@ -216,16 +216,16 @@ $product = select_one_product_ctr($product_id);
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box about-widget">
 						<h2 class="widget-title">About us</h2>
-						<p> Revampd is the best writing service! Get that job or school application with us. Services range from CV, Cover letters, interview preparations and more.</p>
+						<p>Revamp'd is a career development organization that focuses on equipping young individuals with the necessary skills to take their careers to the next level</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box get-in-touch">
 						<h2 class="widget-title">Get in Touch</h2>
 						<ul>
-							<li>34/8, East Hukupara, Gifirtok, Sadan.</li>
-							<li>support@fruitkha.com</li>
-							<li>+00 111 222 3333</li>
+							
+							<li>revampwithd@gmail.com</li>
+							
 						</ul>
 					</div>
 				</div>
@@ -234,9 +234,9 @@ $product = select_one_product_ctr($product_id);
 						<h2 class="widget-title">Pages</h2>
 						<ul>
 							<li><a href="../index.php">Home</a></li>
-							<li><a href="about.php">About</a></li>
-							<li><a href="shop.php">Shop</a></li>
-							<li><a href="contact.php">Contact</a></li>
+							<li><a href="./view/about.php">About</a></li>
+							<li><a href=".view/shop.php">Shop</a></li>
+						
 						</ul>
 					</div>
 				</div>
@@ -244,7 +244,7 @@ $product = select_one_product_ctr($product_id);
 					<div class="footer-box subscribe">
 						<h2 class="widget-title">Subscribe</h2>
 						<p>Subscribe to our mailing list to get the latest updates.</p>
-						<form action="index.html">
+						<form action="index.php">
 							<input type="email" placeholder="Email">
 							<button type="submit"><i class="fas fa-paper-plane"></i></button>
 						</form>
@@ -261,17 +261,16 @@ $product = select_one_product_ctr($product_id);
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
 					<p>Copyrights &copy; 2021 -   All Rights Reserved.<br>
-				
+						Powered By - Revamp'D
 					</p>
 				</div>
 				<div class="col-lg-6 text-right col-md-12">
 					<div class="social-icons">
 						<ul>
-							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+							
 							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li>
+							
+							
 						</ul>
 					</div>
 				</div>

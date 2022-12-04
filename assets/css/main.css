@@ -2066,19 +2066,26 @@ a.video-play-btn {
 }
 
 .abt-bg {
-  background-image: url(../img/abt.jpg);
+
+  /* background-image: url('../img/breadcrumb-bg.jpg'); */
   height: 100%;
   width: 100%;
-  background-size: cover;
-  background-position: center;
+  /* background-size: cover;
+  background-position: center; */
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
-  position: relative;
+  /* position: relative;
   z-index: 1;
-  overflow: hidden;
+  overflow: hidden; */
 }
 
-.abt-bg:after {
+.abt-bg img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* .abt-bg:after {
   position: absolute;
   left: 0;
   top: 0;
@@ -2087,7 +2094,7 @@ a.video-play-btn {
   content: "";
   background-color: #051922;
   opacity: 0.3;
-}
+} */
 
 .abt-section .abt-text {
   padding: 50px;

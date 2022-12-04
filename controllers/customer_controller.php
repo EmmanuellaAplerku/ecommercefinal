@@ -20,10 +20,34 @@ function select_one_customer_ctr($email){
 
 }
 
+function select_all_users_ctr()
+{
+    // create an instance of the user class
+    $user_instance = new CustomerClass();
+    // call the method from the class
+    return $user_instance->select_all_users();
+}
 
 function select_one_email_ctr($id){
     $selectcustomer = new CustomerClass();
 
     return $selectcustomer->select_one_email_class($id);
-
 }
+
+//check if mail exists function 
+ 
+function verify_email($email)
+{
+    //create an instance of the user class
+    $user_instance = new CustomerClass();
+    return $user_instance->verify_email($email);
+}
+
+function insert_uploads_ctr($customer_id, $description, $files){
+    //create an instance of the class
+    $upload_file = new CustomerClass();
+    //run the method
+    return $upload_file->insert_uploads_class($customer_id, $description, $files);
+}  
+
+?>

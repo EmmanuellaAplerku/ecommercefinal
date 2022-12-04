@@ -3,7 +3,7 @@
 /**
  *
  */
-include_once (dirname(__FILE__)) . '/../settings/db_class.php';
+include_once dirname(__FILE__) . '/../settings/db_class.php';
 
 class cart_class extends db_connection
 {
@@ -14,10 +14,16 @@ class cart_class extends db_connection
         return $this->db_query($sql);
     }
 
+    function add_to_cart_ip_cls($pid, $ipadd, $quantity)
+    {
+        $sql = "INSERT INTO `cart`(`p_id`, `ip_add`, `qty`) VALUES ('$pid', '$ipadd','$quantity')";
+        return $this->db_query($sql);
+    }
+
     function select_all_cart_cls($cid)
     {
         // $sql = "SELECT * FROM `products`";
-        $sql = "SELECT products.product_id, products.product_title, products.product_price, products.product_desc, products.product_image, cart.qty FROM products left join cart on products.product_id = cart.p_id WHERE cart.c_id=$cid";
+        $sql = "SELECT products.product_id, products.product_title, products.product_price, products.product_desc, products.product_image, cart.qty FROM products left join cart on products.product_id = cart.p_id WHERE cart.c_id='$cid'";
         return $this->db_fetch_all($sql);
     }
     function select_one_cart_cls($prod_id, $cid)
@@ -42,6 +48,50 @@ class cart_class extends db_connection
     {
         $sql = "UPDATE `cart` SET qty = '$newquant' WHERE p_id='$pid' AND c_id='$cid'";
         return $this->db_query($sql);
+    }
+
+    // //Customer logged in: Select all items in cart
+    // function select_all_cart_lg($c_id)
+    // {
+    //     return $this->db_fetch_all("select products.product_id, products.product_title, products.product_price, products.product_image, cart.p_id, cart.c_id, cart.quantity from cart join products on (products.product_id = cart.p_id) where cart.c_id = '$c_id'");
+    // }
+
+
+    //ORDERS & PAYMENTS --------------------------------
+    //Add orders
+    function add_order($user_id, $invoice_no, $order_date, $order_status)
+    {
+        return $this->db_query(
+            "insert into orders (customer_id, invoice_no, order_date, order_status) values('$user_id','$invoice_no', '$order_date', '$order_status')"
+        );
+    }
+
+    //Add Order Details
+    function add_order_details($order_id, $product_id, $quantity)
+    {
+        return $this->db_query(
+            "insert into orderdetails (order_id,product_id,	qty) values('$order_id','$product_id', '$quantity')"
+        );
+    }
+    //Get Last Order
+    function get_last_order()
+    {
+        return $this->db_fetch_one(
+            'select max(order_id) as currentOrder from orders'
+        );
+    }
+
+    //Add payment
+    function payment_cart(
+        $amt,
+        $user_id,
+        $order_id,
+        $currency,
+        $payment_date
+    ) {
+        return $this->db_query(
+            "insert into payment (amt,customer_id,order_id,currency,payment_date) values ('$amt','$user_id','$order_id','$currency','$payment_date')"
+        );
     }
 
     //Sum of items in the cart when customer is logged in
@@ -75,6 +125,11 @@ class cart_class extends db_connection
         return $this->db_fetch_one('select count(*) as count from products');
     }
 
+    function approveOrder($order_id, $status)
+    {
+        return $this->db_query("update orders set order_status = '$status' where order_id='$order_id'");
+    }
+
     function sum_approved_orders_cls()
     {
         return $this->db_fetch_one(
@@ -87,6 +142,24 @@ class cart_class extends db_connection
         return $this->db_fetch_all(
             'select customer.customer_id, customer.customer_name, orders.order_id, orders.invoice_no, orders.order_date, orders.order_status from orders join customer on (customer.customer_id = orders.customer_id)'
         );
+    }
+
+    function clear_cart($cid)
+    {
+        $sql = "DELETE FROM cart WHERE c_id='$cid'";
+        return $this->db_query($sql);
+    }
+
+
+    function select_orderDetails_admin()
+    {
+        return $this->db_fetch_all("select products.product_id, products.product_title, products.product_image, products.product_price, orders.order_id, orders.invoice_no, orders.order_date, orders.order_status, orderdetails.qty, orderdetails.qty * products.product_price as result from orderdetails join products on (orderdetails.product_id = products.product_id) join orders on (orderdetails.order_id = orders.order_id)");
+    }
+
+    function select_payment_admin()
+    {
+
+        return $this->db_fetch_all("select customer.customer_name, orders.order_id, orders.invoice_no, orders.order_date, orders.order_status, payment.amt, payment.currency, payment.payment_date, payment.pay_id from payment join orders on (orders.order_id = payment.order_id) join customer on (customer.customer_id = payment.customer_id) ");
     }
 }
 ?>

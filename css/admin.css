@@ -114,6 +114,9 @@ body {
   height: 1.5em;
   width: 1.5em;
   margin: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .us_container .sidebar .content .menuItems .menuItem .icon img {
