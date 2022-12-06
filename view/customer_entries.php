@@ -159,7 +159,8 @@ $role = $_SESSION['role'] ?? null;
                             
 							<p><textarea name="message" id="message" cols="30" rows="10" placeholder="What are you looking to achieve? (Role,firm,school application & Industry)"></textarea></p>
                             <p>
-								<input type="file" placeholder="Upload a file" name="file[]" id="phone" multiple="multiple" />
+								<input type="file" placeholder="Upload a file" name="file[]" id="phone" multiple="multiple" accept="application/pdf,application/msword,
+  								application/vnd.openxmlformats-officedocument.wordprocessingml.document"/>
 								
 							</p>
 							<!-- <input type="hidden" name="token" value="FsWga4&@f6aw" /> -->

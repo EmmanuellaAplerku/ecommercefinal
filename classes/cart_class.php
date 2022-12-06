@@ -26,6 +26,15 @@ class cart_class extends db_connection
         $sql = "SELECT products.product_id, products.product_title, products.product_price, products.product_desc, products.product_image, cart.qty FROM products left join cart on products.product_id = cart.p_id WHERE cart.c_id='$cid'";
         return $this->db_fetch_all($sql);
     }
+    
+    function select_all_cart_gst_cls($ip_add)
+    {
+        // $sql = "SELECT * FROM `products`";
+        $sql = "SELECT products.product_id, products.product_title, products.product_price, products.product_desc, products.product_image, cart.qty FROM products left join cart on products.product_id = cart.p_id WHERE cart.ip_add='$ip_add'";
+        return $this->db_fetch_all($sql);
+    }
+
+
     function select_one_cart_cls($prod_id, $cid)
     {
         $mysql = "SELECT * FROM `cart` WHERE p_id = '$prod_id' AND c_id='$cid'";
@@ -59,7 +68,7 @@ class cart_class extends db_connection
     //Check duplicates in cart item when not logged in
     function check_cart_gst_cls($p_id, $ip_add)
     {
-        return $this->db_fetch_one("select p_id, ip_add from cart where p_id='$p_id' and ip_add='$ip_add' ");
+        return $this->db_fetch_one("select p_id, ip_add from cart where p_id='$p_id' and ip_add='$ip_add'");
     }
 
 

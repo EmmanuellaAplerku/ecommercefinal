@@ -14,9 +14,8 @@ if(isset($_SESSION['customer_id'])){
         // check for duplicates
         $chk_dup = check_cart_lg_ctr($pid, $cid);
         if($chk_dup){
-            echo "Item already exists. Increase quantity instead";
+            echo "<script> window.location.href='../view/cart.php?message=Product already in cart. Increase the quantity instead'</script>";
         }else{
-
             $add_cart=add_to_cart_ctr($pid,$cid,$quantity);
             if($add_cart){
                 // echo 'added';
@@ -33,17 +32,24 @@ if(isset($_SESSION['customer_id'])){
         $pid = $_GET['product_id'];
         $ip_add = check_ip();
         // echo $ip_add;
-        // exit();
-      
-        $add_cart=add_to_cart_ip_ctr($pid,$ip_add,$quantity);
-        // var_dump($add_cart);
-        if($add_cart){
-            // echo 'added';
-            header('Location: ../view/cart.php');
+        // echo $pid;
+
+        // check for duplicates
+        $chk_dup = check_cart_gst_ctr($pid, $ip_add);
+
+        if($chk_dup){
+            echo "<script> window.location.href='../view/cart.php?message=Product already in cart. Increase the quantity instead'
+            </script>";
+        }else{
+            $add_cart=add_to_cart_ip_ctr($pid,$ip_add,$quantity);
+            if($add_cart){
+                // echo 'added';
+                echo "<script> window.location.href='../view/cart.php?message=Product added to cart'
+            </script>";
+            }
         }
-    
-        
     }
+    // echo "hello";
 }
 
 

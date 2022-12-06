@@ -9,6 +9,7 @@ $image = './assets/img/products/';
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -41,16 +42,17 @@ $image = './assets/img/products/';
 	<link rel="stylesheet" href="assets/css/responsive.css">
 
 </head>
+
 <body>
-	
+
 	<!--PreLoader-->
-    <div class="loader">
-        <div class="loader-inner">
-            <div class="circle"></div>
-        </div>
-    </div>
-    <!--PreLoader Ends-->
-	
+	<div class="loader">
+		<div class="loader-inner">
+			<div class="circle"></div>
+		</div>
+	</div>
+	<!--PreLoader Ends-->
+
 	<!-- header -->
 	<div class="top-header-area" id="sticker">
 		<div class="container">
@@ -70,19 +72,19 @@ $image = './assets/img/products/';
 						<nav class="main-menu">
 							<ul>
 								<li class="current-list-item"><a href="index.php">Home</a>
-									
+
 								</li>
 								<li><a href="./view/about.php">About</a></li>
-								
-								
+
+
 								<li><a href="./view/shop.php">Shop</a>
-									
+
 								</li>
 								<li>
 									<div class="header-icons">
 										<a class="shopping-cart" href="./view/cart.php"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-										<?php if(isset($uid) && isset($role) == '1') {
+										<?php if (isset($uid) && isset($role) == '1') {
 											echo '<a href="./Login/logout.php">Logout</a>';
 										} ?>
 									</div>
@@ -98,7 +100,7 @@ $image = './assets/img/products/';
 		</div>
 	</div>
 	<!-- end header -->
-	
+
 	<!-- search area -->
 	<div class="search-area">
 		<div class="container">
@@ -120,7 +122,7 @@ $image = './assets/img/products/';
 
 	<!-- hero area -->
 	<div class="hero-area" style="background-image: url(../assets/img/revampdlogo.jpg);">
-							
+
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-9 offset-lg-2 text-center">
@@ -139,8 +141,8 @@ $image = './assets/img/products/';
 		</div>
 	</div>
 	<!-- end hero area -->
-</br>
-</br>
+	</br>
+	</br>
 	<!-- advertisement section -->
 	<div class="abt-section mb-150">
 		<div class="container">
@@ -163,50 +165,49 @@ $image = './assets/img/products/';
 		</div>
 	</div>
 	<!-- end advertisement section -->
-	
+
 
 	<!-- product section -->
 	<div class="product-section mt-150 mb-150">
 		<div class="container">
 
 			<div class="row">
-                <div class="col-md-12">
-                    <div class="product-filters">
-                        <!-- <ul>
+				<div class="col-md-12">
+					<div class="product-filters">
+						<!-- <ul>
                             <li class="active" data-filter="*">All</li>
                             <li data-filter=".strawberry">Strawberry</li>
                             <li data-filter=".berry">Berry</li>
                             <li data-filter=".lemon">Lemon</li>
                         </ul> -->
-                    </div>
-                </div>
-            </div>
-
-			<div class="row product-lists">
-			<?php 
-	$datafound = select_all_products_ctr(); 
-				
-	foreach ($datafound as $item) { ?>
-				<div class="col-lg-4 col-md-6 text-center strawberry">
-					<div class="single-product-item">
-						<div class="product-image" style="height: 250px; margin-bottom: 30px;">
-							<a href="./view/single_product.php?product_id=<?php echo $item['product_id']?>"><img style="width: 100%; height: 100%; object-fit: cover;" src="<?php echo $image . basename($item['product_image']); ?>" alt=""></a>
-						</div>
-						<h3><?php
-											
-											echo $item['product_title'];
-											?></h3>
-						<p class="product-price"><span><?php
-										echo 'GHS';
-										echo $item['product_price'];
-										?></span>  </p>
-						<a href="./actions/add_to_cart.php?product_id=<?php echo $item['product_id']?>" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
 					</div>
 				</div>
-				<?php } ?>
-				
-				
-				
+			</div>
+
+			<div class="row product-lists">
+				<?php
+				$datafound = select_all_products_ctr();
+
+				foreach ($datafound as $item) { ?>
+					<div class="col-lg-4 col-md-6 text-center strawberry">
+						<div class="single-product-item">
+							<div class="product-image" style="height: 250px; margin-bottom: 30px;">
+								<a href="./view/single_product.php?product_id=<?php echo $item['product_id']; ?>"><img style="width: 100%; height: 100%; object-fit: cover;" src="<?php echo $image .
+																					basename($item['product_image']); ?>" alt=""></a>
+							</div>
+							<h3><?php echo $item['product_title']; ?></h3>
+							<p class="product-price"><span><?php
+															echo 'GHS';
+															echo $item['product_price'];
+															?></span> </p>
+							<a href="./actions/add_to_cart.php?product_id=<?php echo $item['product_id']; ?>" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+						</div>
+					</div>
+				<?php }
+				?>
+
+
+
 			</div>
 
 			<div class="row">
@@ -226,8 +227,8 @@ $image = './assets/img/products/';
 	</div>
 	<!-- end product section -->
 
-	
-                
+
+
 
 	<!-- testimonail-section -->
 	<div class="testimonail-section mt-150 mb-150">
@@ -263,17 +264,17 @@ $image = './assets/img/products/';
 								</div>
 							</div>
 						</div>
-						
+
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- end testimonail-section -->
-	
-	
-	
-	
+
+
+
+
 
 
 	<!-- footer -->
@@ -290,9 +291,9 @@ $image = './assets/img/products/';
 					<div class="footer-box get-in-touch">
 						<h2 class="widget-title">Get in Touch</h2>
 						<ul>
-							
+
 							<li>revampwithd@gmail.com</li>
-							
+
 						</ul>
 					</div>
 				</div>
@@ -303,7 +304,7 @@ $image = './assets/img/products/';
 							<li><a href="index.php">Home</a></li>
 							<li><a href="./view/about.php">About</a></li>
 							<li><a href=".view/shop.php">Shop</a></li>
-							
+
 						</ul>
 					</div>
 				</div>
@@ -321,23 +322,23 @@ $image = './assets/img/products/';
 		</div>
 	</div>
 	<!-- end footer -->
-	
+
 	<!-- copyright -->
 	<div class="copyright">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2021 -   All Rights Reserved.<br>
+					<p>Copyrights &copy; 2021 - All Rights Reserved.<br>
 						Powered By - Revamp'D
 					</p>
 				</div>
 				<div class="col-lg-6 text-right col-md-12">
 					<div class="social-icons">
 						<ul>
-							
+
 							<li><a href="https://instagram.com/revamped_____?igshid=YTY2NzY3YTc=" target="_blank"><i class="fab fa-instagram"></i></a></li>
-							
-							
+
+
 						</ul>
 					</div>
 				</div>
@@ -345,7 +346,7 @@ $image = './assets/img/products/';
 		</div>
 	</div>
 	<!-- end copyright -->
-	
+
 	<!-- jquery -->
 	<script src="assets/js/jquery-1.11.3.min.js"></script>
 	<!-- bootstrap -->
@@ -368,4 +369,5 @@ $image = './assets/img/products/';
 	<script src="assets/js/main.js"></script>
 
 </body>
+
 </html>

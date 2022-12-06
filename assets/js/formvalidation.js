@@ -16,7 +16,7 @@ const register = (e) =>{
 	const passValue = pass.value.trim();
 
     if(unameValue === '') {
-		setEmptyFor(uname, 'First Name cannot be blank');
+		setEmptyFor(uname, ' Name cannot be blank');
 		e.preventDefault();
 	} else if(!isuname(unameValue)){
 		setEmptyFor(uname, 'Format not valid: Eg. Codex')

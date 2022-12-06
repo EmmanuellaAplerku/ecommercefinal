@@ -1,15 +1,30 @@
 <?php
-	include_once('../settings/core.php');
-	include '../controllers/cart_controller.php';
-	$uid = check_login();
-	// $role = inspect_admin() ;
-	$subTotal = 0.0;
-	$total = 0.0;
-	$selectedproduct = select_all_cart_ctr($uid);
+include_once '../settings/core.php';
+include '../controllers/cart_controller.php';
+// $uid = check_login();
 
+// $role = inspect_admin();
+$subTotal = 0.0;
+$total = 0.0;
+
+if(isset($_SESSION['customer_id'])){
+	$uid = $_SESSION['customer_id'];
+	$selectedproduct = select_all_cart_ctr($uid);
+}else{
+	$ip_add = check_ip();
+	echo $ip_add;
+	$selectedproduct_gst = select_all_cart_gst_ctr($ip_add);
+}
+
+if (isset($_GET['message'])) {
+	$message = $_GET['message'];
+} else {
+	$message = '';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -41,17 +56,25 @@
 	<!-- responsive -->
 	<link rel="stylesheet" href="../assets/css/responsive.css">
 
+	<!-- sweet alert -->
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="sweetalert2.min.js"></script>
+	<link rel="stylesheet" href="sweetalert2.min.css">
+
+
+
 </head>
+
 <body>
-	
+
 	<!--PreLoader-->
-    <div class="loader">
-        <div class="loader-inner">
-            <div class="circle"></div>
-        </div>
-    </div>
-    <!--PreLoader Ends-->
-	
+	<div class="loader">
+		<div class="loader-inner">
+			<div class="circle"></div>
+		</div>
+	</div>
+	<!--PreLoader Ends-->
+
 	<!-- header -->
 	<div class="top-header-area" id="sticker">
 		<div class="container">
@@ -60,7 +83,7 @@
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-						<a href="index.php" style="color: white; font-weight: bold; font-size:1.3rem;">
+							<a href="index.php" style="color: white; font-weight: bold; font-size:1.3rem;">
 								<!-- <img src="./assets/img/revampdlogo.jpg" width="60" alt=""> -->
 								REVAMP'D
 							</a>
@@ -72,17 +95,17 @@
 							<ul>
 								<li class="current-list-item"><a href="../index.php">Home</a></li>
 								<li><a href="../view/about.php">About</a></li>
-								
-								
+
+
 								<li><a href="shop.php">Shop</a>
 								</li>
 								<li>
 									<div class="header-icons">
 										<a class="shopping-cart" href="cart.php"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-										<!-- <?php if(isset($uid) && isset($role) == '1') {
-											echo '<a href="../Login/logout.php">Logout</a>';
-										} ?> -->
+										 <?php if (isset($uid)) {
+													echo '<a href="../Login/logout.php">Logout</a>';
+												} ?> 
 									</div>
 								</li>
 							</ul>
@@ -108,7 +131,7 @@
 							<form method=POST action="search_product.php">
 								<h3>Search For:</h3>
 								<input type="text" name="searchtitle" placeholder="Keywords">
-								<button  type="submit">Search <i class="fas fa-search"></i></button>
+								<button type="submit">Search <i class="fas fa-search"></i></button>
 							</form>
 						</div>
 					</div>
@@ -134,8 +157,8 @@
 	<!-- end breadcrumb section -->
 
 	<!-- cart -->
-	
-				<div class="cart-section mt-150 mb-150">
+
+	<div class="cart-section mt-150 mb-150">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-md-12">
@@ -150,53 +173,88 @@
 									<th class="product-quantity">Quantity</th>
 									<th class="product-quantity"></th>
 									<th class="product-total">Sub Total</th>
-								
+
 
 								</tr>
 							</thead>
 							<tbody>
-							<?php
-            // print_r($selectedproduct);
-            foreach ($selectedproduct as $product) {
-				$sub = $product['product_price' ] * $product['qty'];
-                $total += (float)$sub;
-                $title= $product['product_title'];
-               	$unitprice= $product['product_price'] ;
-              	$qty= $product['qty'];
-				$subTotal = $sub;
-				$total = $total;
-				?>
-								<form method=POST action="../actions/manage_quantity.php">
-								<tr class="table-body-row">
-									<input type="hidden" name="prod_id" value="<?php echo $product['product_id'] ?>">
-									<td class="product-remove"><a href="<?php echo "../actions/remove_from_cart.php?deletePID=" . $product['product_id']; ?>"><i class="far fa-window-close"></i></a></td>
-									<td class="product-image"><img src="<?php echo $product['product_image']; ?>" alt=""></td>
-									<td class="product-name"> <?php
-                                        
-                                        echo $product['product_title'];
-                                        ?></td>
-									<td class="product-price">  <?php
-                                    	echo 'GHS';
-                                    	echo $product['product_price'];
-                                    	?>
-										</td>
-										<td class="product-quantity"><input type="number" name="qty" placeholder="0" value=<?php echo $qty ?>></td>
-										<td class="product-quantity">
-											<input class="btn black" type="submit" name="updateQty" value="Update">
-										</td>
-										<td class="product-total"><?php echo $subTotal?></td>
-									</form>
+								<?php // print_r($selectedproduct);
+								if (isset($uid) ) {
 									
-								</tr>
-							<?php
-			}
-	?>
+										
+										foreach ($selectedproduct as $product) {
+	
+											$sub = $product['product_price'] * $product['qty'];
+											$total += (float) $sub;
+											$title = $product['product_title'];
+											$unitprice = $product['product_price'];
+											$qty = $product['qty'];
+											$subTotal = $sub;
+											$total = $total;
+									?>
+											<form method=POST action="../actions/manage_quantity.php">
+												<tr class="table-body-row">
+													<input type="hidden" name="prod_id" value="<?php echo $product['product_id']; ?>">
+													<td class="product-remove"><a href="<?php echo '../actions/remove_from_cart.php?deletePID=' .
+																							$product['product_id']; ?>"><i class="far fa-window-close"></i></a></td>
+													<td class="product-image"><img src="<?php echo $product['product_image']; ?>" alt=""></td>
+													<td class="product-name"> <?php echo $product['product_title']; ?></td>
+													<td class="product-price"> <?php
+																				echo 'GHS';
+																				echo $product['product_price'];
+																				?>
+													</td>
+													<td class="product-quantity"><input type="number" name="qty" placeholder="0" value=<?php echo $qty; ?>></td>
+													<td class="product-quantity">
+														<input class="btn black" type="submit" name="updateQty" value="Update">
+													</td>
+													<td class="product-total"><?php echo $subTotal; ?></td>
+											</form>
+	
+											</tr>
+										<?php
+										}
+									
+								} else {
+									foreach ($selectedproduct_gst as $product) {
+
+										$sub = $product['product_price'] * $product['qty'];
+										$total += (float) $sub;
+										$title = $product['product_title'];
+										$unitprice = $product['product_price'];
+										$qty = $product['qty'];
+										$subTotal = $sub;
+										$total = $total;
+									?>
+										<form method=POST action="../actions/manage_quantity.php">
+											<tr class="table-body-row">
+												<input type="hidden" name="prod_id" value="<?php echo $product['product_id']; ?>">
+												<td class="product-remove"><a href="<?php echo '../actions/remove_from_cart.php?deletePID=' .
+																						$product['product_id']; ?>"><i class="far fa-window-close"></i></a></td>
+												<td class="product-image"><img src="<?php echo $product['product_image']; ?>" alt=""></td>
+												<td class="product-name"> <?php echo $product['product_title']; ?></td>
+												<td class="product-price"> <?php
+																			echo 'GHS';
+																			echo $product['product_price'];
+																			?>
+												</td>
+												<td class="product-quantity"><input type="number" name="qty" placeholder="0" value=<?php echo $qty; ?>></td>
+												<td class="product-quantity">
+													<input class="btn black" type="submit" name="updateQty" value="Update">
+												</td>
+												<td class="product-total"><?php echo $subTotal; ?></td>
+										</form>
+
+										</tr>
+								<?php
+									}
+								} ?>
 							</tbody>
 						</table>
 					</div>
 				</div>
-				
-				
+
+
 
 				<div class="col-lg-4">
 					<div class="total-section">
@@ -208,28 +266,48 @@
 								</tr>
 							</thead>
 							<tbody>
-								
+
 								<tr class="total-data">
 									<td><strong> GHS </strong></td>
-									<td><?php echo $total ?></td>
+									<td><?php echo $total; ?></td>
 								</tr>
 							</tbody>
 						</table>
 						<div class="cart-buttons">
-							
-							<a href="../view/payment_form.php?amount=<?php echo $total?>" class="boxed-btn black">Check Out</a>
+
+							<?php if (isset($uid) && isset($role)) { ?>
+
+								<a href="../view/payment_form.php?amount=<?php echo $total; ?>" class="boxed-btn black">Check Out</a>
+							<?php } else { ?>
+								<a role="button" class="boxed-btn black" onclick="fireAlert()">Check Out</a>
+								<script>
+									function fireAlert(){
+										Swal.fire({
+											title: 'Action Restricted',
+											text: 'You need to be logged in',
+											icon: 'warning',
+											confirmButtonText: 'Okay'
+										}).then(()=>{
+											window.location.href='../Login/login.php';
+										})
+									}
+								</script>
+							<?php } ?>
+
 						</div>
 					</div>
 
-					
+
 				</div>
 			</div>
 		</div>
 	</div>
-	
+
+	<input type="hidden" name="" id="alert" value="<?php echo $message; ?>">
+
 	<!-- end cart -->
 
-	
+
 
 	<!-- footer -->
 	<div class="footer-area">
@@ -258,8 +336,8 @@
 							<li><a href="index.php">Home</a></li>
 							<li><a href="about.php">About</a></li>
 							<li><a href="services.php">Shop</a></li>
-							
-							
+
+
 						</ul>
 					</div>
 				</div>
@@ -277,13 +355,13 @@
 		</div>
 	</div>
 	<!-- end footer -->
-	
+
 	<!-- copyright -->
 	<div class="copyright">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2019 - <a href="https://imransdesign.com/">Imran Hossain</a>,  All Rights Reserved.<br>
+					<p>Copyrights &copy; 2019 - <a href="https://imransdesign.com/">Imran Hossain</a>, All Rights Reserved.<br>
 						Distributed By - <a href="https://themewagon.com/">Themewagon</a>
 					</p>
 				</div>
@@ -291,7 +369,7 @@
 					<div class="social-icons">
 						<ul>
 							<li><a href="https://instagram.com/revamped_____?igshid=YTY2NzY3YTc=" target="_blank"><i class="fab fa-instagram"></i></a></li>
-							
+
 						</ul>
 					</div>
 				</div>
@@ -299,7 +377,7 @@
 		</div>
 	</div>
 	<!-- end copyright -->
-	
+
 	<!-- jquery -->
 	<script src="../assets/js/jquery-1.11.3.min.js"></script>
 	<!-- bootstrap -->
@@ -321,5 +399,32 @@
 	<!-- main js -->
 	<script src="../assets/js/main.js"></script>
 
+	<!-- sweet alert code -->
+	<script>
+		let sw = document.getElementById('alert').value
+		if (sw == 'Product already in cart. Increase the quantity instead') {
+			Swal.fire({
+				title: 'Duplicate product',
+				text: sw,
+				icon: 'warning',
+				confirmButtonText: 'Okay'
+			}).then(()=>{
+				window.history.back()
+			})
+		} else if (sw == 'Product added to cart') {
+			Swal.fire({
+				title: 'Product added to cart',
+				text: sw,
+				icon: 'success',
+				confirmButtonText: 'Okay'
+			}).then(()=>{
+				window.history.back()
+			})
+		} else {
+
+		}
+	</script>
+
 </body>
+
 </html>

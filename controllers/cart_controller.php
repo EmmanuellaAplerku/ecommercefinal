@@ -26,6 +26,11 @@ function select_all_cart_ctr($cid)
     $show_cart = new cart_class();
     return $show_cart->select_all_cart_cls($cid);
 }
+function select_all_cart_gst_ctr($ip_add)
+{
+    $show_cart = new cart_class();
+    return $show_cart->select_all_cart_gst_cls($ip_add);
+}
 
 //This function removes a product from the cart when the customer is logged in
 function remove_from_cart_ctr($pid, $cid)
