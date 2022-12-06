@@ -15,16 +15,11 @@ if (isset($_POST['submitfiles'])) {
         $temp = $target;
         $tmp = $_FILES['file']['tmp_name'][$count];
         $count = $count + 1;
-        $temp = $temp . basename($filename);
+        $temp = $target . basename($filename);
         $move = move_uploaded_file($tmp, $temp);
-        // echo $tmp . '<br>';
-        // $result = insert_uploads_ctr($user_id, $desc, $tmp);
-        // $temp = '';
-        // $tmp = '';
-        // echo $finalArr;
         if($move){
             // insert into the db
-            $result = insert_uploads_ctr($user_id, $desc, $tmp);
+            $result = insert_uploads_ctr($user_id, $desc, $temp);
             if($result){
                 $temp = '';
                 $tmp = '';

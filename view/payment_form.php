@@ -98,7 +98,7 @@ function aplerkuPaystack() {
   event.preventDefault();
 
   let handler = PaystackPop.setup({
-    key: 'pk_live_bd5356607a881f3a0d6843b75d3172b74b9675cd', 
+    key: 'pk_test_aeac52408dfe068589d984dc145de1ea34aa8a1d', 
     email: document.getElementById("eml").value,
     amount: document.getElementById("amount").value * 100,
     ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you

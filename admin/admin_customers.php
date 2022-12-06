@@ -92,6 +92,15 @@ if (isset($_SESSION['role']) == '1') {
                             </div>
                             <p class="m_name">Customers</p>
                         </a>
+
+                        <a href="./admin_customer_uploads.php" class="menuItem">
+                            <div class="icon">
+                            <i class='bx bxs-download'></i>
+                                <!-- <img src="../assets/icons/bi_people-fill.svg" alt=""> -->
+                            </div>
+                            <p class="m_name">Uploads</p>
+                        </a>
+
                         <a href="./admin_payments.php" class="menuItem">
                             <div class="icon">
                             <i class='bx bxs-discount'></i>

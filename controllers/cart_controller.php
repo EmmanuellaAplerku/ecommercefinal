@@ -123,6 +123,12 @@ function add_order_controller($user_id, $invoice_no, $order_date, $order_status)
     );
 }
 
+function select_customer_uploads_ctr(){
+    $cart_instance = new cart_class();
+    return $cart_instance->select_customer_uploads_cls();
+}
+
+
 function add_order_details_controller($order_id, $product_id, $qty)
 {
     //create instance of the cart class

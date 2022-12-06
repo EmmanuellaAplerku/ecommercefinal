@@ -174,5 +174,12 @@ class cart_class extends db_connection
 
         return $this->db_fetch_all("select customer.customer_name, orders.order_id, orders.invoice_no, orders.order_date, orders.order_status, payment.amt, payment.currency, payment.payment_date, payment.pay_id from payment join orders on (orders.order_id = payment.order_id) join customer on (customer.customer_id = payment.customer_id) ");
     }
+
+
+    function select_customer_uploads_cls(){
+        $sql = "SELECT customer.customer_id, customer.customer_name, customer.customer_email, customer.customer_contact, customeruploads.description, customeruploads.files FROM customer join customeruploads on customer.customer_id = customeruploads.customer_id";
+        return $this->db_fetch_all($sql);
+    }
+    
 }
 ?>
