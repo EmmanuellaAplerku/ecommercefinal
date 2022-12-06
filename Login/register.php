@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
 
-    <script type="text/javascript" src="../js/registervalidation.js"></script>
     <link rel="stylesheet" href="https://www.markuptag.com/bootstrap/5/css/bootstrap.min.css">
 
 
@@ -43,61 +42,67 @@
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="text" id="fname" class="form-control" placeholder="Enter your full name"  name="fullname" />
                       <label class="form-label" for="form3Example1c">Full Name</label>
+                      <input type="text" id="name" class="form-control" placeholder="Enter your full name"  name="fullname" />
+                      <small class="error"></small>
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="email" id="eml" name="email" placeholder="Enter your email" class="form-control" />
                       <label class="form-label" for="form3Example3c">Email</label>
+                      <input type="email" id="email" name="email" placeholder="Enter your email" class="form-control" />
+                      <small class="error"></small>
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="password" id="pwd" name="password" placeholder="Enter a password" class="form-control" />
                       <label class="form-label" for="form3Example4c">Password</label>
+                      <input type="password" id="pwd" name="password" placeholder="Enter a password" class="form-control" />
+                      <small class="error"></small>
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="text" id="ctry" name="country" placeholder="Enter your country" class="form-control" />
                       <label class="form-label" for="form3Example4cd">Country</label>
+                      <input type="text" id="ctry" name="country" placeholder="Enter your country" class="form-control" />
+                      <small class="error"></small>
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="text" id="cty" name="city" placeholder="Enter your city" class="form-control" />
                       <label class="form-label" for="form3Example4cd">City</label>
+                      <input type="text" id="cty" name="city" placeholder="Enter your city" class="form-control" />
+                      <small class="error"></small>
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="text" id="cnt" name="contact" placeholder="Enter your contact" class="form-control" />
                       <label class="form-label" for="form3Example4cd">Contact</label>
+                      <input type="text" id="pnum" name="contact" placeholder="Enter your contact" class="form-control" />
+                      <small class="error"></small>
                     </div>
                   </div>
 
-
+<!-- 
                   <div class="form-check d-flex justify-content-center mb-5">
-                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
                     <label class="form-check-label" for="form2Example3">
+                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
                       I agree all statements in <a href="#!">Terms of service</a>
                     </label>
-                  </div>
+                  </div> -->
 
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="submit" name="submit" class="btn btn-primary btn-lg">Register</button>
+                    <button type="submit" id="registerBtn" name="submit" class="btn btn-primary btn-lg">Register</button>
                   </div>
 
                 </form>
@@ -118,5 +123,7 @@
   </div>
 </section>
 
+
+  <script src="../assets/js/formvalidation.js"></script>
 </body>
 <html>

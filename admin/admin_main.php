@@ -54,14 +54,14 @@ if (isset($_SESSION['role']) == '1') {
                         <a href="./admin_main.php" class="menuItem active">
                             <div class="icon">
                                 <!-- icon -->
-                                <i class='bx bxs-dashboard'></i>
+                                <i style="color: white;" class='bx bxs-dashboard'></i>
 
                             </div>
                             <p class="m_name">Dashboard</p>
                         </a>
                         <a href="./admin_orders.php" class="menuItem">
                             <div class="icon">
-                                <i class='bx bx-store-alt'></i>
+                                <i style="color: white;" class='bx bx-store-alt'></i>
                             </div>
                             <p class="m_name">Orders</p>
                         </a>
@@ -69,14 +69,14 @@ if (isset($_SESSION['role']) == '1') {
 
                         <a href="./admin_viewproduct.php" class="menuItem">
                             <div class="icon">
-                            <i class='bx bx-show'></i>
+                            <i style="color: white;" class='bx bx-show'></i>
                                 <!--  -->
                             </div>
                             <p class="m_name">View Product</p>
                         </a>
                         <a href="./admin_addproducts.php" class="menuItem">
                             <div class="icon">
-                            <i class='bx bx-message-square-add'></i>
+                            <i style="color: white;" class='bx bx-message-square-add'></i>
                                 <!--  -->
                             </div>
                             <p class="m_name">Add Product</p>
@@ -84,14 +84,14 @@ if (isset($_SESSION['role']) == '1') {
 
                         <a href="./admin_brands.php" class="menuItem">
                             <div class="icon">
-                            <i class='bx bxl-unity'></i>
+                            <i style="color: white;" class='bx bxl-unity'></i>
                                 <!-- <img src="../assets/icons/ic_baseline-review-white.svg" alt=""> -->
                             </div>
                             <p class="m_name">Brands</p>
                         </a>
                         <a href="./admin_categories.php" class="menuItem">
                             <div class="icon">
-                            <i class='bx bxs-customize'></i>
+                            <i style="color: white;" class='bx bxs-customize'></i>
                                 <!-- <img src="../assets/icons/bx_bxs-category-alt.svg" alt=""> -->
                             </div>
                             <p class="m_name">Categories</p>
@@ -99,14 +99,14 @@ if (isset($_SESSION['role']) == '1') {
 
                         <a href="./admin_customers.php" class="menuItem">
                             <div class="icon">
-                            <i class='bx bxs-user'></i>
+                            <i style="color: white;" class='bx bxs-user'></i>
                                 <!-- <img src="../assets/icons/bi_people-fill.svg" alt=""> -->
                             </div>
                             <p class="m_name">Customers</p>
                         </a>
                         <a href="./admin_payments.php" class="menuItem">
                             <div class="icon">
-                            <i class='bx bxs-discount'></i>
+                            <i style="color: white;" class='bx bxs-discount'></i>
                                 <!-- <img src="../assets/icons/fluent_payment-24-filled-white.svg" alt=""> -->
                             </div>
                             <p class="m_name">Payments</p>
@@ -114,7 +114,7 @@ if (isset($_SESSION['role']) == '1') {
 
                         <a href="../Login/logout.php" class="menuItem">
                             <div class="icon">
-                            <i class='bx bxs-user-minus'></i>
+                            <i style="color: white;" class='bx bxs-user-minus'></i>
                                 <!-- <img src="../assets/icons/ri_logout-circle-fill.svg" alt=""> -->
                             </div>
                             <p class="m_name">Logout</p>
@@ -133,7 +133,8 @@ if (isset($_SESSION['role']) == '1') {
                         <div class="stat_items">
                             <div class="stat_item">
                                 <div class="icon ic1">
-                                    <img src="../assets/icons/fluent_select-all-off-24-filled.svg" alt="">
+                                    <!--  -->
+                                    <i style="color: white;" class='bx bxs-spreadsheet'></i>
                                 </div>
                                 <div class="textDetails">
                                     <p>All Products</p>
@@ -142,7 +143,8 @@ if (isset($_SESSION['role']) == '1') {
                             </div>
                             <div class="stat_item">
                                 <div class="icon ic2">
-                                    <img src="../assets/icons/mdi_package-white.svg" alt="">
+                                    <!--  -->
+                                    <i style="color: white;" class='bx bx-cart-alt'></i>
                                 </div>
                                 <div class="textDetails">
                                     <p>Total Orders</p>
@@ -151,7 +153,9 @@ if (isset($_SESSION['role']) == '1') {
                             </div>
                             <div class="stat_item">
                                 <div class="icon ic4">
-                                    <img src="../assets/icons/fa-solid_hourglass-end.svg" alt="">
+                                    <!--  -->
+                                    <i style="color: white;" class='bx bxs-radiation'></i>
+                                    
                                 </div>
                                 <div class="textDetails">
                                     <p>Orders Pending</p>
@@ -160,7 +164,8 @@ if (isset($_SESSION['role']) == '1') {
                             </div>
                             <div class="stat_item">
                                 <div class="icon ic3">
-                                    <img src="../assets/icons/ic_round-publish.svg" alt="">
+                                    <!--  -->
+                                    <i style="color: white;" class='bx bxs-message-alt-check'></i>
                                 </div>
                                 <div class="textDetails">
                                     <p>Orders Approved</p>
@@ -207,8 +212,8 @@ if (isset($_SESSION['role']) == '1') {
                                                 } else {
                                                 ?>
                                                     <td>
-                                                        <a href="../actions/approveOrders.php?a_id=<?php echo $order['order_id']; ?>">Approve</a>
-                                                        <a href="../actions/approveOrders.php?cancel_id=<?php echo $order['order_id']; ?>">Cancel</a>
+                                                        <a href="../actions/approveOrders.php?a_id=<?php echo $order['order_id']; ?>"><i class='bx bxs-message-alt-check'></i></a>
+                                                        <a href="../actions/approveOrders.php?cancel_id=<?php echo $order['order_id']; ?>"><i class='bx bxs-message-alt-x'></i></a>
                                                     </td>
                                                 <?php
                                                 }

@@ -58,9 +58,12 @@ $role = $_SESSION['role'] ?? null;
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="index.php">
-								<img src="../assets/img/revampdlogo.png" alt="">
+							<a href="index.php" style="color: white; font-weight: bold; font-size:1.3rem;">
+								<!-- <img src="./assets/img/revampdlogo.jpg" width="60" alt=""> -->
+								REVAMP'D
 							</a>
+								
+							
 						</div>
 						<!-- logo -->
 
@@ -133,7 +136,7 @@ $role = $_SESSION['role'] ?? null;
 	<!-- end breadcrumb section -->
 
 	<!-- featured section -->
-	<div class="feature-bg">
+	<div class="feature-bg" >
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-7">
@@ -191,44 +194,26 @@ $role = $_SESSION['role'] ?? null;
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="section-title">
 						<h3>Our <span class="orange-text">Team</span></h3>
-						<p>We a solid team of three providing you with the best services ever</p>
+						<p>We have a solid team providing you with the best services ever</p>
 					</div>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row justify-content-center">
 				<div class="col-lg-4 col-md-6">
 					<div class="single-team-item">
-						<div class="team-bg team-bg-1"></div>
+						<div class="team-bg"> <img src="../assets/img/team/photo_2022-12-05 23.38.18.jpeg" alt=""> </div>
 						<h4>Davidal Kobi <span>CEO</span></h4>
-						<ul class="social-link-team">
-							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-						</ul>
+						
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<div class="single-team-item">
-						<div class="team-bg team-bg-2"></div>
+						<div class="team-bg"> <img src="../assets/img/team/photo_2022-12-05 23.38.22.jpeg" alt=""> </div>
 						<h4>Marry Doe <span>Digital Marketing Officer</span></h4>
-						<ul class="social-link-team">
-							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-						</ul>
+						
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
-					<div class="single-team-item">
-						<div class="team-bg team-bg-3"></div>
-						<h4>Simon Joe <span>Farmer</span></h4>
-						<ul class="social-link-team">
-							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-						</ul>
-					</div>
-				</div>
+				
 			</div>
 		</div>
 	</div>
@@ -245,9 +230,9 @@ $role = $_SESSION['role'] ?? null;
 								<img src="assets/img/avaters/avatar1.png" alt="">
 							</div>
 							<div class="client-meta">
-								<h3>Saira Hakim <span>Local shop owner</span></h3>
+								<h3>Marie Amoah <span>Operations fellow at Chalkboard Education</span></h3>
 								<p class="testimonial-body">
-									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+									" My experience with Revamp'D boosted my confidence for interviews "
 								</p>
 								<div class="last-icon">
 									<i class="fas fa-quote-right"></i>
@@ -259,9 +244,9 @@ $role = $_SESSION['role'] ?? null;
 								<img src="assets/img/avaters/avatar2.png" alt="">
 							</div>
 							<div class="client-meta">
-								<h3>David Niph <span>Local shop owner</span></h3>
+								<h3>Elikem Asamoah <span>Business Analyst</span></h3>
 								<p class="testimonial-body">
-									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+									" Very neat and detailed work, was very quick and within my timeline as well. I'd highly recommend! "
 								</p>
 								<div class="last-icon">
 									<i class="fas fa-quote-right"></i>
@@ -273,9 +258,9 @@ $role = $_SESSION['role'] ?? null;
 								<img src="assets/img/avaters/avatar3.png" alt="">
 							</div>
 							<div class="client-meta">
-								<h3>Jacob Sikim <span>Local shop owner</span></h3>
+								<h3>Cherry Ankrah <span>LLB(Hons) Law with International Relations Graduate</span></h3>
 								<p class="testimonial-body">
-									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+									" Customer service was on point! Her work met my expectation and was accurately done. I definitely recommend her services. "
 								</p>
 								<div class="last-icon">
 									<i class="fas fa-quote-right"></i>
@@ -376,7 +361,7 @@ $role = $_SESSION['role'] ?? null;
 					<div class="social-icons">
 						<ul>
 							
-							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="https://instagram.com/revamped_____?igshid=YTY2NzY3YTc=" target="_blank"><i class="fab fa-instagram"></i></a></li>
 							
 							
 						</ul>

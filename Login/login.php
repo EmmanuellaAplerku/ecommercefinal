@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
-    <script type="text/javascript" src="../js/registervalidation.js"></script>
+    
     <link rel="stylesheet" href="https://www.markuptag.com/bootstrap/5/css/bootstrap.min.css">
 
 
@@ -34,8 +34,9 @@
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                      <input type="email" id="eml" name="email" placeholder="Enter your email" class="form-control" />
+                      <input type="email" id="email" name="email" placeholder="Enter your email" class="form-control" />
                       <label class="form-label" for="form3Example3c">Email</label>
+                      <small class="error"></small>
                     </div>
                   </div>
 
@@ -44,6 +45,7 @@
                     <div class="form-outline flex-fill mb-0">
                       <input type="password" id="pwd" name="password" placeholder="Enter a password" class="form-control" />
                       <label class="form-label" for="form3Example4c">Password</label>
+                      <small class="error"></small>
                     </div>
                   </div>
 
@@ -56,7 +58,7 @@
                   </div>
 
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="submit" name="login" class="btn btn-primary btn-lg">Login</button>
+                    <button type="submit" name="login" id="loginBtn" class="btn btn-primary btn-lg">Login</button>
                   </div>
 
                 </form>
@@ -77,5 +79,6 @@
   </div>
 </section>
 
+  <script src="../assets/js/loginVal.js"></script>
 </body>
 <html>

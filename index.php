@@ -59,8 +59,9 @@ $image = './assets/img/products/';
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="index.php">
-								<img src="../assets/img/revampdlogo.jpg" alt="">
+							<a href="index.php" style="color: white; font-weight: bold; font-size:1.3rem;">
+								<!-- <img src="./assets/img/revampdlogo.jpg" width="60" alt=""> -->
+								REVAMP'D
 							</a>
 						</div>
 						<!-- logo -->
@@ -146,7 +147,7 @@ $image = './assets/img/products/';
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
 					<div class="abt-bg">
-						<img src="./assets/img/revampedlogo.jpg" alt="">
+						<img src="./assets/img/revampdlogo.jpg" alt="">
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-12">
@@ -236,12 +237,12 @@ $image = './assets/img/products/';
 					<div class="testimonial-sliders">
 						<div class="single-testimonial-slider">
 							<div class="client-avater">
-								<img src="assets/img/avaters/avatar1.png" alt="">
+								<img src="assets/img/avaters/IMG_5594.jpg" alt="">
 							</div>
 							<div class="client-meta">
 								<h3>Marie Amoah <span>Interview Preparation</span></h3>
 								<p class="testimonial-body">
-									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+									" My experience with Revamp'D boosted my confidence for interviews "
 								</p>
 								<div class="last-icon">
 									<i class="fas fa-quote-right"></i>
@@ -250,32 +251,19 @@ $image = './assets/img/products/';
 						</div>
 						<div class="single-testimonial-slider">
 							<div class="client-avater">
-								<img src="assets/img/avaters/avatar2.png" alt="">
+								<img src="assets/img/avaters/IMG_5593.jpg" alt="">
 							</div>
 							<div class="client-meta">
-								<h3>David Niph <span>Resume Writing</span></h3>
+								<h3>Elikem Asamoah <span>Business Analyst</span></h3>
 								<p class="testimonial-body">
-									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+									" Very neat and detailed work, was very quick and within my timeline as well. I'd highly recommend! "
 								</p>
 								<div class="last-icon">
 									<i class="fas fa-quote-right"></i>
 								</div>
 							</div>
 						</div>
-						<div class="single-testimonial-slider">
-							<div class="client-avater">
-								<img src="assets/img/avaters/avatar3.png" alt="">
-							</div>
-							<div class="client-meta">
-								<h3>Jacob Sikim <span>Local shop owner</span></h3>
-								<p class="testimonial-body">
-									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
-								</p>
-								<div class="last-icon">
-									<i class="fas fa-quote-right"></i>
-								</div>
-							</div>
-						</div>
+						
 					</div>
 				</div>
 			</div>
@@ -347,7 +335,7 @@ $image = './assets/img/products/';
 					<div class="social-icons">
 						<ul>
 							
-							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="https://instagram.com/revamped_____?igshid=YTY2NzY3YTc=" target="_blank"><i class="fab fa-instagram"></i></a></li>
 							
 							
 						</ul>

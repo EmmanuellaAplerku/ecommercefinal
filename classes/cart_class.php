@@ -50,6 +50,19 @@ class cart_class extends db_connection
         return $this->db_query($sql);
     }
 
+    //Check duplicates in cart when logged in
+    function check_cart_lg_cls($p_id, $c_id)
+    {
+        return $this->db_fetch_one("select p_id, c_id from cart where p_id='$p_id' and c_id='$c_id'");
+    }
+
+    //Check duplicates in cart item when not logged in
+    function check_cart_gst_cls($p_id, $ip_add)
+    {
+        return $this->db_fetch_one("select p_id, ip_add from cart where p_id='$p_id' and ip_add='$ip_add' ");
+    }
+
+
     // //Customer logged in: Select all items in cart
     // function select_all_cart_lg($c_id)
     // {

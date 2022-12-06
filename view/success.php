@@ -59,8 +59,9 @@ $role = $_SESSION['role'] ?? null;
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="index.html">
-								<img src="assets/img/logo.png" alt="">
+						<a href="index.php" style="color: white; font-weight: bold; font-size:1.3rem;">
+								<!-- <img src="./assets/img/revampdlogo.jpg" width="60" alt=""> -->
+								REVAMP'D
 							</a>
 						</div>
 						<!-- logo -->
@@ -188,16 +189,14 @@ $role = $_SESSION['role'] ?? null;
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2021 -   All Rights Reserved.<br>
-						Powered By - Revamp'D
+					<p>Copyrights &copy; 2019 - <a href="https://imransdesign.com/">Imran Hossain</a>,  All Rights Reserved.<br>
+						Distributed By - <a href="https://themewagon.com/">Themewagon</a>
 					</p>
 				</div>
 				<div class="col-lg-6 text-right col-md-12">
 					<div class="social-icons">
 						<ul>
-							
-							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-						
+							<li><a href="https://instagram.com/revamped_____?igshid=YTY2NzY3YTc=" target="_blank"><i class="fab fa-instagram"></i></a></li>
 							
 						</ul>
 					</div>

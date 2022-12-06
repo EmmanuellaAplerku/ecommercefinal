@@ -49,7 +49,7 @@ if (isset($_GET['deleteBrandID'])){
     $brd_id = $_GET['deleteBrandID'];
    
 
-    $del = delete_category_ctr($ctg_id);
+    $del = delete_brand_ctr($brd_id);
    
     
     if ($del)

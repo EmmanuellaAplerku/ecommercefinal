@@ -2165,9 +2165,9 @@ a.video-play-btn {
 }
 
 .feature-bg:after {
-  background-image: url(../img/feature-bg.jpg);
+  background-image: url(../img/revampdlogo.jpg);
   position: absolute;
-  right: 0;
+  right: 15%;
   top: 0;
   width: 40%;
   height: 100%;

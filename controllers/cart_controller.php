@@ -40,6 +40,24 @@ function update_quant_ctr($pid, $newquant, $cid)
     return $update_quant->update_quant_cls($pid, $newquant, $cid);
 }
 
+//Check duplicates in cart controller when logged in
+function check_cart_lg_ctr($p_id, $c_id)
+{
+    //create instance of the cart class
+    $cart_duplicate = new cart_class();
+    //calls method from Cart class
+    return $cart_duplicate->check_cart_lg_cls($p_id, $c_id);
+}
+
+//Guest: Check duplicates in cart item controller
+function check_cart_gst_ctr($p_id, $ip_add)
+{
+    //create instance of the cart class
+    $cart_duplicate_notlogged = new cart_class();
+    //calls method from Cart class
+    return $cart_duplicate_notlogged->check_cart_gst_cls($p_id, $ip_add);
+}
+
 function sum_all_cart_ctr($cid)
 {
     $calc_total = new cart_class();

@@ -58,8 +58,9 @@ $role = $_SESSION['role'] ?? null;
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="index.php">
-								<img src="assets/img/logo.png" alt="">
+						<a href="index.php" style="color: white; font-weight: bold; font-size:1.3rem;">
+								<!-- <img src="./assets/img/revampdlogo.jpg" width="60" alt=""> -->
+								REVAMP'D
 							</a>
 						</div>
 						<!-- logo -->
@@ -283,7 +284,7 @@ $role = $_SESSION['role'] ?? null;
 					<div class="social-icons">
 						<ul>
 							
-							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="https://instagram.com/revamped_____?igshid=YTY2NzY3YTc=" target="_blank"><i class="fab fa-instagram"></i></a></li>
 							
 							
 						</ul>
@@ -293,6 +294,7 @@ $role = $_SESSION['role'] ?? null;
 		</div>
 	</div>
 	<!-- end copyright -->
+	
 	
 	<!-- jquery -->
 	<script src="../assets/js/jquery-1.11.3.min.js"></script>
