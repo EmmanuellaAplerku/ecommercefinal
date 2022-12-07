@@ -207,7 +207,7 @@ if (isset($_SESSION['role']) == '1') {
             
                 Swal.fire({
                     title: 'Access Denied',
-                    text: 'You cannot access this page because you are not',
+                    text: 'You cannot access this page because you are not an admin',
                     icon: 'warning',
                     confirmButtonText: 'Okay'
                 }).then(() => {
