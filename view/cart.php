@@ -55,11 +55,11 @@ if (isset($_GET['message'])) {
 	<link rel="stylesheet" href="../assets/css/main.css">
 	<!-- responsive -->
 	<link rel="stylesheet" href="../assets/css/responsive.css">
+	<!-- <link rel="stylesheet" href="sweetalert2.min.css"> -->
 
 	<!-- sweet alert -->
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-	<script src="sweetalert2.min.js"></script>
-	<link rel="stylesheet" href="sweetalert2.min.css">
+	<!-- <script src="sweetalert2.min.js"></script> -->
 
 
 
@@ -309,23 +309,21 @@ if (isset($_GET['message'])) {
 
 
 
-	<!-- footer -->
-	<div class="footer-area">
+	 <!-- footer -->
+	 <div class="footer-area">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box about-widget">
 						<h2 class="widget-title">About us</h2>
-						<p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+						<p>Revamp'd is a career development organization that focuses on equipping young individuals with the necessary skills to take their careers to the next level</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box get-in-touch">
 						<h2 class="widget-title">Get in Touch</h2>
 						<ul>
-							<li>34/8, East Hukupara, Gifirtok, Sadan.</li>
-							<li>support@fruitkha.com</li>
-							<li>+00 111 222 3333</li>
+							<li>revampwithd@gmail.com</li>
 						</ul>
 					</div>
 				</div>
@@ -334,10 +332,9 @@ if (isset($_GET['message'])) {
 						<h2 class="widget-title">Pages</h2>
 						<ul>
 							<li><a href="index.php">Home</a></li>
-							<li><a href="about.php">About</a></li>
-							<li><a href="services.php">Shop</a></li>
-
-
+							<li><a href="./view/about.php">About</a></li>
+							<li><a href=".view/shop.php">Shop</a></li>
+							
 						</ul>
 					</div>
 				</div>
@@ -345,7 +342,7 @@ if (isset($_GET['message'])) {
 					<div class="footer-box subscribe">
 						<h2 class="widget-title">Subscribe</h2>
 						<p>Subscribe to our mailing list to get the latest updates.</p>
-						<form action="index.html">
+						<form action="index.php">
 							<input type="email" placeholder="Email">
 							<button type="submit"><i class="fas fa-paper-plane"></i></button>
 						</form>
@@ -355,7 +352,7 @@ if (isset($_GET['message'])) {
 		</div>
 	</div>
 	<!-- end footer -->
-
+	
 	<!-- copyright -->
 	<div class="copyright">
 		<div class="container">
@@ -402,19 +399,19 @@ if (isset($_GET['message'])) {
 	<!-- sweet alert code -->
 	<script>
 		let sw = document.getElementById('alert').value
-		if (sw == 'Product already in cart. Increase the quantity instead') {
+		if (sw == 'failed') {
 			Swal.fire({
 				title: 'Duplicate product',
-				text: sw,
+				text: 'Product is already in the cart. Increase the quantity instead',
 				icon: 'warning',
 				confirmButtonText: 'Okay'
 			}).then(()=>{
-				window.history.back()
+				window.location.href='cart.php'
 			})
-		} else if (sw == 'Product added to cart') {
+		} else if (sw == 'success') {
 			Swal.fire({
 				title: 'Product added to cart',
-				text: sw,
+				text: '',
 				icon: 'success',
 				confirmButtonText: 'Okay'
 			}).then(()=>{

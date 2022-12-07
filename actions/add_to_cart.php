@@ -14,12 +14,12 @@ if(isset($_SESSION['customer_id'])){
         // check for duplicates
         $chk_dup = check_cart_lg_ctr($pid, $cid);
         if($chk_dup){
-            echo "<script> window.location.href='../view/cart.php?message=Product already in cart. Increase the quantity instead'</script>";
+            header('Location: ../view/cart.php?message=failed');
         }else{
             $add_cart=add_to_cart_ctr($pid,$cid,$quantity);
             if($add_cart){
                 // echo 'added';
-                header('Location: ../view/cart.php');
+                header('Location: ../view/cart.php?message=success');
             }
         }
     
@@ -38,14 +38,12 @@ if(isset($_SESSION['customer_id'])){
         $chk_dup = check_cart_gst_ctr($pid, $ip_add);
 
         if($chk_dup){
-            echo "<script> window.location.href='../view/cart.php?message=Product already in cart. Increase the quantity instead'
-            </script>";
+            header('Location: ../view/cart.php?message=failed');
         }else{
             $add_cart=add_to_cart_ip_ctr($pid,$ip_add,$quantity);
             if($add_cart){
                 // echo 'added';
-                echo "<script> window.location.href='../view/cart.php?message=Product added to cart'
-            </script>";
+                header('Location: ../view/cart.php?message=success');
             }
         }
     }

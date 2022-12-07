@@ -294,7 +294,54 @@ if (isset($_SESSION['role']) == '1') {
     </html>
 <?php
 } else {
-    echo "<script type='text/javascript'> alert('Admin not logged in');
-            document.location.href = '../index.php';
-            </script>";
+    ?>
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="../assets/css/all.min.css">
+        <!-- bootstrap -->
+        <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+        <!-- owl carousel -->
+        <link rel="stylesheet" href="../assets/css/owl.carousel.css">
+        <!-- magnific popup -->
+        <link rel="stylesheet" href="../assets/css/magnific-popup.css">
+        <!-- animate css -->
+        <link rel="stylesheet" href="../assets/css/animate.css">
+        <!-- mean menu css -->
+        <link rel="stylesheet" href="../assets/css/meanmenu.min.css">
+        <!-- main style -->
+        <link rel="stylesheet" href="../assets/css/main.css">
+        <!-- responsive -->
+        <link rel="stylesheet" href="../assets/css/responsive.css">
+        <!-- <link rel="stylesheet" href="sweetalert2.min.css"> -->
+
+        <!-- sweet alert -->
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   </head>
+   <body>
+   <input type="hidden" name="" id="alert" value="<?php echo $message; ?>">
+   <script>
+            
+                Swal.fire({
+                    title: 'Access Denied',
+                    text: 'You cannot access this page because you are not',
+                    icon: 'warning',
+                    confirmButtonText: 'Okay'
+                }).then(() => {
+                    window.location.href = '../index.php'
+                })
+            
+
+        </script>
+    
+   </body>
+   </html>
+
+   <?php
 }
+

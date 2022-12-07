@@ -18,9 +18,7 @@ if (isset($_POST['submit'])) {
         $verify_email = verify_email($email);
 
         if ($verify_email) {
-            echo "<script type='text/javascript'> alert('Email already exists');              
-            window.history.back();
-            </script>";
+            header('Location: ../Login/register.php?message=duplicate');
         } else {
             $result = addcustomer_ctr(
                 $fullname,
@@ -33,7 +31,7 @@ if (isset($_POST['submit'])) {
             );
 
             if ($result) {
-                header('Location: ../Login/login.php');
+                header('Location: ../Login/register.php?message=success');
             } else {
                 echo 'failed to save';
             }

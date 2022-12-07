@@ -34,12 +34,33 @@ if (isset($_SESSION['role']) == '1') {
 
 
         <title>Admin | Dashboard</title>
+        <!-- fontawesome -->
+        <link rel="stylesheet" href="../assets/css/all.min.css">
+        <!-- bootstrap -->
+        <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+        <!-- owl carousel -->
+        <link rel="stylesheet" href="../assets/css/owl.carousel.css">
+        <!-- magnific popup -->
+        <link rel="stylesheet" href="../assets/css/magnific-popup.css">
+        <!-- animate css -->
+        <link rel="stylesheet" href="../assets/css/animate.css">
+        <!-- mean menu css -->
+        <link rel="stylesheet" href="../assets/css/meanmenu.min.css">
+        <!-- main style -->
+        <link rel="stylesheet" href="../assets/css/main.css">
+        <!-- responsive -->
+        <link rel="stylesheet" href="../assets/css/responsive.css">
+        <!-- <link rel="stylesheet" href="sweetalert2.min.css"> -->
+
+        <!-- sweet alert -->
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <!-- <script src="sweetalert2.min.js"></script> -->
     </head>
 
     <body>
         <!-- user profile -->
         <div class="us_container">
-        <div class="sidebar">
+            <div class="sidebar">
                 <div class="content">
 
                     <div class="logo" style="padding: 20px 0; color:white;">
@@ -69,14 +90,14 @@ if (isset($_SESSION['role']) == '1') {
 
                         <a href="./admin_viewproduct.php" class="menuItem">
                             <div class="icon">
-                            <i style="color: white;" class='bx bx-show'></i>
+                                <i style="color: white;" class='bx bx-show'></i>
                                 <!--  -->
                             </div>
                             <p class="m_name">View Product</p>
                         </a>
                         <a href="./admin_addproducts.php" class="menuItem">
                             <div class="icon">
-                            <i style="color: white;" class='bx bx-message-square-add'></i>
+                                <i style="color: white;" class='bx bx-message-square-add'></i>
                                 <!--  -->
                             </div>
                             <p class="m_name">Add Product</p>
@@ -84,14 +105,14 @@ if (isset($_SESSION['role']) == '1') {
 
                         <a href="./admin_brands.php" class="menuItem">
                             <div class="icon">
-                            <i style="color: white;" class='bx bxl-unity'></i>
+                                <i style="color: white;" class='bx bxl-unity'></i>
                                 <!-- <img src="../assets/icons/ic_baseline-review-white.svg" alt=""> -->
                             </div>
                             <p class="m_name">Brands</p>
                         </a>
                         <a href="./admin_categories.php" class="menuItem">
                             <div class="icon">
-                            <i style="color: white;" class='bx bxs-customize'></i>
+                                <i style="color: white;" class='bx bxs-customize'></i>
                                 <!-- <img src="../assets/icons/bx_bxs-category-alt.svg" alt=""> -->
                             </div>
                             <p class="m_name">Categories</p>
@@ -99,7 +120,7 @@ if (isset($_SESSION['role']) == '1') {
 
                         <a href="./admin_customers.php" class="menuItem">
                             <div class="icon">
-                            <i style="color: white;" class='bx bxs-user'></i>
+                                <i style="color: white;" class='bx bxs-user'></i>
                                 <!-- <img src="../assets/icons/bi_people-fill.svg" alt=""> -->
                             </div>
                             <p class="m_name">Customers</p>
@@ -107,7 +128,7 @@ if (isset($_SESSION['role']) == '1') {
 
                         <a href="./admin_customer_uploads.php" class="menuItem">
                             <div class="icon">
-                            <i class='bx bxs-download'></i>
+                                <i class='bx bxs-download'></i>
                                 <!-- <img src="../assets/icons/bi_people-fill.svg" alt=""> -->
                             </div>
                             <p class="m_name">Uploads</p>
@@ -115,7 +136,7 @@ if (isset($_SESSION['role']) == '1') {
 
                         <a href="./admin_payments.php" class="menuItem">
                             <div class="icon">
-                            <i style="color: white;" class='bx bxs-discount'></i>
+                                <i style="color: white;" class='bx bxs-discount'></i>
                                 <!-- <img src="../assets/icons/fluent_payment-24-filled-white.svg" alt=""> -->
                             </div>
                             <p class="m_name">Payments</p>
@@ -123,7 +144,7 @@ if (isset($_SESSION['role']) == '1') {
 
                         <a href="../Login/logout.php" class="menuItem">
                             <div class="icon">
-                            <i style="color: white;" class='bx bxs-user-minus'></i>
+                                <i style="color: white;" class='bx bxs-user-minus'></i>
                                 <!-- <img src="../assets/icons/ri_logout-circle-fill.svg" alt=""> -->
                             </div>
                             <p class="m_name">Logout</p>
@@ -164,7 +185,7 @@ if (isset($_SESSION['role']) == '1') {
                                 <div class="icon ic4">
                                     <!--  -->
                                     <i style="color: white;" class='bx bxs-radiation'></i>
-                                    
+
                                 </div>
                                 <div class="textDetails">
                                     <p>Orders Pending</p>
@@ -247,14 +268,61 @@ if (isset($_SESSION['role']) == '1') {
             </div>
         </div>
 
-        <script src="../assets/js/accordion.js"></script>
+        <!-- sweet alert code -->
+        
     </body>
 
     </html>
 <?php
 
 } else {
-    echo "<script type='text/javascript'> alert('Admin not logged in');
-        document.location.href = '../index.php';
-        </script>";
+    ?>
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="../assets/css/all.min.css">
+        <!-- bootstrap -->
+        <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+        <!-- owl carousel -->
+        <link rel="stylesheet" href="../assets/css/owl.carousel.css">
+        <!-- magnific popup -->
+        <link rel="stylesheet" href="../assets/css/magnific-popup.css">
+        <!-- animate css -->
+        <link rel="stylesheet" href="../assets/css/animate.css">
+        <!-- mean menu css -->
+        <link rel="stylesheet" href="../assets/css/meanmenu.min.css">
+        <!-- main style -->
+        <link rel="stylesheet" href="../assets/css/main.css">
+        <!-- responsive -->
+        <link rel="stylesheet" href="../assets/css/responsive.css">
+        <!-- <link rel="stylesheet" href="sweetalert2.min.css"> -->
+
+        <!-- sweet alert -->
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   </head>
+   <body>
+   <input type="hidden" name="" id="alert" value="<?php echo $message; ?>">
+   <script>
+            
+                Swal.fire({
+                    title: 'Access Denied',
+                    text: 'You cannot access this page because you are not',
+                    icon: 'warning',
+                    confirmButtonText: 'Okay'
+                }).then(() => {
+                    window.location.href = '../index.php'
+                })
+            
+
+        </script>
+    
+   </body>
+   </html>
+
+   <?php
 }

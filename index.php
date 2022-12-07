@@ -130,10 +130,20 @@ $image = './assets/img/products/';
 						<div class="hero-text-tablecell">
 							<p class="subtitle">Increased chances of getting that school or job!</p>
 							<h1>Writing Services and Interview Prep</h1>
-							<div class="hero-btns">
-								<a href="Login/register.php" class="boxed-btn">Register</a>
-								<a href="Login/login.php" class="bordered-btn">Login</a>
-							</div>
+
+
+							<?php
+
+							if (!isset($uid)) {
+							?>
+								<div class="hero-btns">
+									<a href="Login/register.php" class="boxed-btn">Register</a>
+									<a href="Login/login.php" class="bordered-btn">Login</a>
+								</div>
+							<?php
+							}
+							?>
+
 						</div>
 					</div>
 				</div>
@@ -193,7 +203,7 @@ $image = './assets/img/products/';
 						<div class="single-product-item">
 							<div class="product-image" style="height: 250px; margin-bottom: 30px;">
 								<a href="./view/single_product.php?product_id=<?php echo $item['product_id']; ?>"><img style="width: 100%; height: 100%; object-fit: cover;" src="<?php echo $image .
-																					basename($item['product_image']); ?>" alt=""></a>
+																																														basename($item['product_image']); ?>" alt=""></a>
 							</div>
 							<h3><?php echo $item['product_title']; ?></h3>
 							<p class="product-price"><span><?php
