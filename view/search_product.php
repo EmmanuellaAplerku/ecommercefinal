@@ -117,7 +117,7 @@
 		?>
         <div class="col-lg-4 col-md-6 text-center strawberry">
 					<div class="single-product-item">
-						<div class="product-image" style="border: 1px solid black; height: 250px; margin-bottom: 30px;">
+						<div class="product-image" style="height: 250px; margin-bottom: 30px;">
 							<a href="single_product.php"><img style="width: 100%; height: 100%; object-fit: cover;" src="<?php echo $things['product_image']; ?>" alt=""></a>
 						</div>
 						<h3><?php
@@ -187,7 +187,7 @@
 		</div>
 	</div>
 	<!-- end footer -->
-	
+
 	<!-- copyright -->
 	<div class="copyright">
 		<div class="container">

@@ -85,8 +85,8 @@ $image = './assets/img/products/';
 										<a class="shopping-cart" href="./view/cart.php"><i class="fas fa-shopping-cart"></i></a>
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 										<?php if (isset($uid) && isset($role) == '1') {
-											echo '<a href="./Login/logout.php">Logout</a>';
-										} ?>
+              echo '<a href="./Login/logout.php">Logout</a>';
+          } ?>
 									</div>
 								</li>
 							</ul>
@@ -108,11 +108,11 @@ $image = './assets/img/products/';
 				<div class="col-lg-12">
 					<span class="close-btn"><i class="fas fa-window-close"></i></span>
 					<div class="search-bar">
-						<div class="search-bar-tablecell">
-							<h3>Search For:</h3>
-							<input type="text" placeholder="Keywords">
-							<button type="submit">Search <i class="fas fa-search"></i></button>
-						</div>
+					<form method=POST action="./view/search_product.php">
+								<h3>Search For:</h3>
+								<input type="text" name="searchtitle" placeholder="Keywords">
+								<button  type="submit">Search <i class="fas fa-search"></i></button>
+							</form>
 					</div>
 				</div>
 			</div>
@@ -132,17 +132,12 @@ $image = './assets/img/products/';
 							<h1>Writing Services and Interview Prep</h1>
 
 
-							<?php
-
-							if (!isset($uid)) {
-							?>
+							<?php if (!isset($uid)) { ?>
 								<div class="hero-btns">
 									<a href="Login/register.php" class="boxed-btn">Register</a>
 									<a href="Login/login.php" class="bordered-btn">Login</a>
 								</div>
-							<?php
-							}
-							?>
+							<?php } ?>
 
 						</div>
 					</div>
@@ -196,25 +191,29 @@ $image = './assets/img/products/';
 
 			<div class="row product-lists">
 				<?php
-				$datafound = select_all_products_ctr();
+    $datafound = select_all_products_ctr();
 
-				foreach ($datafound as $item) { ?>
+    foreach ($datafound as $item) { ?>
 					<div class="col-lg-4 col-md-6 text-center strawberry">
 						<div class="single-product-item">
 							<div class="product-image" style="height: 250px; margin-bottom: 30px;">
-								<a href="./view/single_product.php?product_id=<?php echo $item['product_id']; ?>"><img style="width: 100%; height: 100%; object-fit: cover;" src="<?php echo $image .
-																																														basename($item['product_image']); ?>" alt=""></a>
+								<a href="./view/single_product.php?product_id=<?php echo $item[
+            'product_id'
+        ]; ?>"><img style="width: 100%; height: 100%; object-fit: cover;" src="<?php echo $image .
+    basename($item['product_image']); ?>" alt=""></a>
 							</div>
 							<h3><?php echo $item['product_title']; ?></h3>
 							<p class="product-price"><span><?php
-															echo 'GHS';
-															echo $item['product_price'];
-															?></span> </p>
-							<a href="./actions/add_to_cart.php?product_id=<?php echo $item['product_id']; ?>" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+       echo 'GHS';
+       echo $item['product_price'];
+       ?></span> </p>
+							<a href="./actions/add_to_cart.php?product_id=<?php echo $item[
+           'product_id'
+       ]; ?>" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
 						</div>
 					</div>
 				<?php }
-				?>
+    ?>
 
 
 
