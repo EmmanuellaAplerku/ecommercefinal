@@ -135,7 +135,6 @@ if (isset($_SESSION['role']) == '1') {
                                 <th>Amount</th>
                                 <th>Currency</th>
                                 <th>Date</th>
-                                <th>Actions</th>
 
                             </tr>
                             <?php
@@ -148,9 +147,7 @@ if (isset($_SESSION['role']) == '1') {
                                     <td><?php echo $payment['amt'] / (10 ** 2) ?></td>
                                     <td><?php echo $payment['currency']; ?></td>
                                     <td><?php echo $payment['payment_date']; ?></td>
-                                    <td class="actions">
-                                        <a href="<?php echo "../actions/delete_payment.php?deletePayID=" . $payment['pay_id']; ?>"><i class='bx bx-trash' style="color: black;"></i></a>
-                                    </td>
+                                    
                                 </tr>
                             <?php
                             }
