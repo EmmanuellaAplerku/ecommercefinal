@@ -85,7 +85,6 @@ if (isset($_GET['message'])) {
 
 
                     <div class="form-check d-flex justify-content-center mb-5">
-                      <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
                       <label class="form-check-label" for="form2Example3">
                         Don't have an account? <a href="./register.php">Register here</a>
                       </label>
