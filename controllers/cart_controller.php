@@ -38,6 +38,12 @@ function remove_from_cart_ctr($pid, $cid)
     $remove_cart = new cart_class();
     return $remove_cart->remove_from_cart_cls($pid, $cid);
 }
+//This function removes a product from the cart when the customer is logged in
+function remove_from_cart_gst_ctr($pid, $ipadd)
+{
+    $remove_cart = new cart_class();
+    return $remove_cart->not_logged_remove_from_cart_cls($pid, $ipadd);
+}
 
 function update_quant_ctr($pid, $newquant, $cid)
 {

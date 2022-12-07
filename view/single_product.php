@@ -217,11 +217,11 @@ $product = select_one_product_ctr($product_id);
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box subscribe">
-						<h2 class="widget-title">Subscribe</h2>
-						<p>Subscribe to our mailing list to get the latest updates.</p>
+						<h2 class="widget-title">Revamp'D</h2>
+						<p>Writing services at your doorstep</p>
 						<form action="index.php">
-							<input type="email" placeholder="Email">
-							<button type="submit"><i class="fas fa-paper-plane"></i></button>
+							<input type="hidden" placeholder="Email">
+							
 						</form>
 					</div>
 				</div>

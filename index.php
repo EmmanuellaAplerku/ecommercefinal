@@ -297,16 +297,7 @@ $image = './assets/img/products/';
 						<p>Revamp'd is a career development organization that focuses on equipping young individuals with the necessary skills to take their careers to the next level</p>
 					</div>
 				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box get-in-touch">
-						<h2 class="widget-title">Get in Touch</h2>
-						<ul>
 
-							<li>revampwithd@gmail.com</li>
-
-						</ul>
-					</div>
-				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box pages">
 						<h2 class="widget-title">Pages</h2>
@@ -318,13 +309,25 @@ $image = './assets/img/products/';
 						</ul>
 					</div>
 				</div>
+				
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box get-in-touch">
+						<h2 class="widget-title">Get in Touch</h2>
+						<ul>
+
+							<li>revampwithd@gmail.com</li>
+
+						</ul>
+					</div>
+				</div>
+				
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box subscribe">
-						<h2 class="widget-title">Subscribe</h2>
-						<p>Subscribe to our mailing list to get the latest updates.</p>
+						<h2 class="widget-title">Revamp'D</h2>
+						<p>Writing services at your doorstep</p>
 						<form action="index.php">
-							<input type="email" placeholder="Email">
-							<button type="submit"><i class="fas fa-paper-plane"></i></button>
+							<input type="hidden" placeholder="Email">
+							
 						</form>
 					</div>
 				</div>

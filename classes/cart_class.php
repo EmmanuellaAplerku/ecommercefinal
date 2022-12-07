@@ -46,6 +46,8 @@ class cart_class extends db_connection
         $sql = "DELETE FROM `cart` WHERE p_id = '$pid' AND c_id = '$cid'";
         return $this->db_query($sql);
     }
+
+
     //Remove from cart when customer is not logged in
     function not_logged_remove_from_cart_cls($pid, $ipadd)
     {

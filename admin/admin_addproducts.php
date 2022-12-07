@@ -223,7 +223,7 @@ if (isset($_SESSION['role']) == '1') {
                                 if (isset($_GET['editPID'])) {
                                     echo "";
                                 } else {
-                                    echo "<input type='file' name='image' id='image'>";
+                                    echo "<input type='file' name='image' id='image' accept='image/*'>";
                                 }
 
                                 ?>

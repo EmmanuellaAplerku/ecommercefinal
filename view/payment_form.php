@@ -4,12 +4,9 @@
     require('../controllers/customer_controller.php');
     $user_id = $_SESSION['customer_id'];
     $sub=$_GET['amount'];
-    // echo $user_id;
-
-    // $amount= $_GET($sub);
-    // $result = select_one_customer_ctr($email);
+    
     $email= select_one_email_ctr($user_id);
-    // echo $user_id;
+    
 ?>
 
 <!DOCTYPE html>
@@ -98,7 +95,7 @@ function aplerkuPaystack() {
   event.preventDefault();
 
   let handler = PaystackPop.setup({
-    key: 'pk_test_aeac52408dfe068589d984dc145de1ea34aa8a1d', 
+    key: 'pk_live_bd5356607a881f3a0d6843b75d3172b74b9675cd', 
     email: document.getElementById("eml").value,
     amount: document.getElementById("amount").value * 100,
     ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
@@ -113,14 +110,7 @@ function aplerkuPaystack() {
 
       window.location = '../actions/process_payment.php?reference='+ response.reference
 
-        // $.ajax({
-        //         url: '../actions/process_payment.php?reference='+ response.reference,
-        //         method: 'post',
-        //         success: function (response) {
-        //          // the transaction status is in response.data.status
-        //           alert(response);
-        //          }
-        //        });
+       
 
 
     }

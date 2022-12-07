@@ -12,7 +12,6 @@ if(isset($_SESSION['customer_id'])){
 	$selectedproduct = select_all_cart_ctr($uid);
 }else{
 	$ip_add = check_ip();
-	echo $ip_add;
 	$selectedproduct_gst = select_all_cart_gst_ctr($ip_add);
 }
 
@@ -83,7 +82,7 @@ if (isset($_GET['message'])) {
 					<div class="main-menu-wrap">
 						<!-- logo -->
 						<div class="site-logo">
-							<a href="index.php" style="color: white; font-weight: bold; font-size:1.3rem;">
+							<a href="../index.php" style="color: white; font-weight: bold; font-size:1.3rem;">
 								<!-- <img src="./assets/img/revampdlogo.jpg" width="60" alt=""> -->
 								REVAMP'D
 							</a>
@@ -340,11 +339,11 @@ if (isset($_GET['message'])) {
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box subscribe">
-						<h2 class="widget-title">Subscribe</h2>
-						<p>Subscribe to our mailing list to get the latest updates.</p>
+						<h2 class="widget-title">Revamp'D</h2>
+						<p>Writing services at your doorstep</p>
 						<form action="index.php">
-							<input type="email" placeholder="Email">
-							<button type="submit"><i class="fas fa-paper-plane"></i></button>
+							<input type="hidden" placeholder="Email">
+							
 						</form>
 					</div>
 				</div>
