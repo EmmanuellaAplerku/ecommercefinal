@@ -166,7 +166,7 @@ if (isset($_SESSION['role']) == '1') {
                                     <?php
                                     if (isset($_GET['editCatID'])) {
                                     ?>
-                                        <button type="submit" name="cancel" id="cancel" class="brand cancel">Cancel</button>
+                                        <a style="background-color: #000000; border-radius: 5px; color: white; padding: 5px 20px; cursor: pointer;" name="cancel" id="cancel" class="brand cancel" onclick="window.history.back();">Cancel</a>
                                     <?php
                                     }
                                     ?>

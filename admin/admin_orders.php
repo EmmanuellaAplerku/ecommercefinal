@@ -5,6 +5,11 @@ include_once (dirname(__FILE__)) . '/../controllers/customer_controller.php';
 
 $ordersAdmin = select_orderDetails_admin_controller();
 
+if (isset($_GET['message'])) {
+    $message = $_GET['message'];
+} else {
+    $message = '';
+}
 
 if (isset($_SESSION['role']) == '1') {
 
@@ -23,6 +28,8 @@ if (isset($_SESSION['role']) == '1') {
         <link rel="stylesheet" href="../css/admin.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <title>Admin | Orders</title>
+        <!-- sweet alert -->
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </head>
 
     <body>
@@ -96,7 +103,7 @@ if (isset($_SESSION['role']) == '1') {
 
                         <a href="./admin_customer_uploads.php" class="menuItem">
                             <div class="icon">
-                            <i class='bx bxs-download'></i>
+                                <i class='bx bxs-download'></i>
                                 <!-- <img src="../assets/icons/bi_people-fill.svg" alt=""> -->
                             </div>
                             <p class="m_name">Uploads</p>
@@ -177,43 +184,77 @@ if (isset($_SESSION['role']) == '1') {
                                     ?>
                                 </table>
                             </div>
-
                         </div>
 
-                        <div class="right_plqs">
-                            <div class="new_orders">
-
-                            </div>
-
-                            <div class="review_plaque">
-
-                            </div>
-                        </div>
+                        <input type="hidden" name="" id="alert" value="<?php echo $message; ?>">
                     </div>
                 </div>
-
-
-
-
             </div>
         </div>
-        </div>
-        <script src="../assets/js/accordion.js"></script>
 
+        <script>
+            let sw = document.getElementById('alert').value
+            if (sw == 'failed') {
+                Swal.fire({
+                    title: 'Failed to approve order',
+                    text: '',
+                    icon: 'warning',
+                    confirmButtonText: 'Okay'
+                }).then(() => {
+                    window.location.href = 'cart.php'
+                })
+            } else if (sw == 'success') {
+                Swal.fire({
+                    title: 'Order approved',
+                    text: '',
+                    icon: 'success',
+                    confirmButtonText: 'Okay'
+                }).then(() => {
+                    window.history.back()
+                })
+            
+            } 
+            else if (sw == 'successCancel') {
+                Swal.fire({
+                    title: 'Order cancelled',
+                    text: '',
+                    icon: 'success',
+                    confirmButtonText: 'Okay'
+                }).then(() => {
+                    window.history.back()
+                })
+            } 
+            
+            else if (sw == 'failedCancel') {
+                Swal.fire({
+                    title: 'Fail to cancel order',
+                    text: '',
+                    icon: 'success',
+                    confirmButtonText: 'Okay'
+                }).then(() => {
+                    window.history.back()
+                })
+            } 
+            
+            else {
+
+            }
+        </script>
     </body>
     </php>
 <?php
 } else {
-    ?>
-   <!DOCTYPE html>
-   <html lang="en">
-   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- fontawesome -->
-    <link rel="stylesheet" href="../assets/css/all.min.css">
+?>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <!-- fontawesome -->
+        <link rel="stylesheet" href="../assets/css/all.min.css">
         <!-- bootstrap -->
         <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
         <!-- owl carousel -->
@@ -232,25 +273,24 @@ if (isset($_SESSION['role']) == '1') {
 
         <!-- sweet alert -->
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-   </head>
-   <body>
-   <input type="hidden" name="" id="alert" value="<?php echo $message; ?>">
-   <script>
-            
-                Swal.fire({
-                    title: 'Access Denied',
-                    text: 'You cannot access this page because you are not',
-                    icon: 'warning',
-                    confirmButtonText: 'Okay'
-                }).then(() => {
-                    window.location.href = '../index.php'
-                })
-            
+    </head>
 
+    <body>
+        <input type="hidden" name="" id="alert" value="<?php echo $message; ?>">
+        <script>
+            Swal.fire({
+                title: 'Access Denied',
+                text: 'You cannot access this page because you are not',
+                icon: 'warning',
+                confirmButtonText: 'Okay'
+            }).then(() => {
+                window.location.href = '../index.php'
+            })
         </script>
-    
-   </body>
-   </html>
 
-   <?php
+    </body>
+
+    </html>
+
+<?php
 }

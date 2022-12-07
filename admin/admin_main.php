@@ -31,30 +31,7 @@ if (isset($_SESSION['role']) == '1') {
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../css/admin.css">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-
         <title>Admin | Dashboard</title>
-        <!-- fontawesome -->
-        <link rel="stylesheet" href="../assets/css/all.min.css">
-        <!-- bootstrap -->
-        <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
-        <!-- owl carousel -->
-        <link rel="stylesheet" href="../assets/css/owl.carousel.css">
-        <!-- magnific popup -->
-        <link rel="stylesheet" href="../assets/css/magnific-popup.css">
-        <!-- animate css -->
-        <link rel="stylesheet" href="../assets/css/animate.css">
-        <!-- mean menu css -->
-        <link rel="stylesheet" href="../assets/css/meanmenu.min.css">
-        <!-- main style -->
-        <link rel="stylesheet" href="../assets/css/main.css">
-        <!-- responsive -->
-        <link rel="stylesheet" href="../assets/css/responsive.css">
-        <!-- <link rel="stylesheet" href="sweetalert2.min.css"> -->
-
-        <!-- sweet alert -->
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <!-- <script src="sweetalert2.min.js"></script> -->
     </head>
 
     <body>
@@ -218,7 +195,7 @@ if (isset($_SESSION['role']) == '1') {
                                             <th>Invoice No</th>
                                             <th>Order Date</th>
                                             <th>Order Status</th>
-                                            <th>Actions</th>
+                                            <!-- <th>Actions</th> -->
                                         </tr>
                                         <?php
                                         foreach ($ordersAdmin as $order) {
@@ -229,26 +206,6 @@ if (isset($_SESSION['role']) == '1') {
                                                 <td><?php echo $order['invoice_no']; ?></td>
                                                 <td><?php echo $order['order_date']; ?></td>
                                                 <td><?php echo $order['order_status']; ?></td>
-                                                <?php
-                                                if ($order['order_status'] == 'Approved' || $order['order_status'] == 'Cancelled') {
-                                                ?>
-                                                    <td>
-                                                        <a href="../actions/deleteFunction.php?delOrder=<?php echo $order['order_id']; ?>">
-                                                            <img src="../assets/icons/fluent_delete-24-filled.svg" alt="" width="20">
-
-                                                        </a>
-                                                    </td>
-                                                <?php
-                                                } else {
-                                                ?>
-                                                    <td>
-                                                        <a href="../actions/approveOrders.php?a_id=<?php echo $order['order_id']; ?>"><i class='bx bxs-message-alt-check'></i></a>
-                                                        <a href="../actions/approveOrders.php?cancel_id=<?php echo $order['order_id']; ?>"><i class='bx bxs-message-alt-x'></i></a>
-                                                    </td>
-                                                <?php
-                                                }
-                                                ?>
-
                                             </tr>
                                         <?php
                                         }
@@ -256,22 +213,14 @@ if (isset($_SESSION['role']) == '1') {
                                     </table>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
-
-
-
-
                 </div>
             </div>
         </div>
-
         <!-- sweet alert code -->
         
     </body>
-
     </html>
 <?php
 

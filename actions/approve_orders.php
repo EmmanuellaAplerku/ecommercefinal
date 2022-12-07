@@ -12,18 +12,21 @@ if (isset($_SESSION['customer_id']) && isset($_SESSION['role'])) {
             $order_status = "Approved";
             $result = approve_order_controller($order_id, $order_status);
             if ($result) {
-                echo "<script>
-                alert('Order status changed successfully');
-                window.history.back();
-                </script>
-                ";
+                header('Location: ../admin/admin_orders.php?message=success');
+                // echo "<script>
+                // alert('Order status changed successfully');
+                // window.history.back();
+                // </script>
+                // ";
             }
             else{
-                echo "<script>
-                alert('Order status changed failed');
-                window.history.back();
-                </script>
-                ";
+                header('Location: ../admin/admin_orders.php?message=failed');
+
+                // echo "<script>
+                // alert('Order status changed failed');
+                // window.history.back();
+                // </script>
+                // ";
             }
         }
 
@@ -32,17 +35,21 @@ if (isset($_SESSION['customer_id']) && isset($_SESSION['role'])) {
             $result = approve_order_controller($order_id, 'Cancelled');
 
             if ($result) {
-                echo "<script>
-                alert('Order status changed successfully');
-                window.history.back();
-                </script>
-                ";
+                header('Location: ../admin/admin_orders.php?message=successCancel');
+
+                // echo "<script>
+                // alert('Order status changed successfully');
+                // window.history.back();
+                // </script>
+                // ";
             } else {
-                echo "<script>
-                alert('Order status changed failed');
-                window.history.back();
-                </script>
-                ";
+                header('Location: ../admin/admin_orders.php?message=failedCancel');
+
+                // echo "<script>
+                // alert('Order status changed failed');
+                // window.history.back();
+                // </script>
+                // ";
             }
         }
     } else {

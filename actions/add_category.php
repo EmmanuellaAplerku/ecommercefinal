@@ -66,5 +66,4 @@ if (isset($_GET['deleteCatID'])){
 
 ?>
 
-?>
     
