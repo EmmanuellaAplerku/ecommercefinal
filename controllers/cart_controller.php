@@ -20,6 +20,12 @@ function select_one_cart_ctr($prod_id, $cid)
     $show_one_cart = new cart_class();
     return $show_one_cart->select_one_cart_cls($prod_id, $cid);
 }
+//This function displays all products placed in the cart
+function select_one_cart_gst_ctr($prod_id, $ipadd)
+{
+    $show_one_cart = new cart_class();
+    return $show_one_cart->select_one_cart_gst_cls($prod_id, $ipadd);
+}
 
 function select_all_cart_ctr($cid)
 {
@@ -49,6 +55,12 @@ function update_quant_ctr($pid, $newquant, $cid)
 {
     $update_quant = new cart_class();
     return $update_quant->update_quant_cls($pid, $newquant, $cid);
+}
+
+function update_quant_gst_ctr($pid, $newquant, $ipadd)
+{
+    $update_quant = new cart_class();
+    return $update_quant->update_quant_gst_cls($pid, $newquant, $ipadd);
 }
 
 //Check duplicates in cart controller when logged in

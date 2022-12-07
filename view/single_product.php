@@ -184,7 +184,7 @@ $product = select_one_product_ctr($product_id);
 
 	
 
-	<!-- footer -->
+	<!--footer-->
 	<div class="footer-area">
 		<div class="container">
 			<div class="row">
@@ -209,9 +209,9 @@ $product = select_one_product_ctr($product_id);
 						<h2 class="widget-title">Pages</h2>
 						<ul>
 							<li><a href="../index.php">Home</a></li>
-							<li><a href="./view/about.php">About</a></li>
-							<li><a href=".view/shop.php">Shop</a></li>
-						
+							<li><a href="about.php">About</a></li>
+							<li><a href="shop.php">Shop</a></li>
+							
 						</ul>
 					</div>
 				</div>

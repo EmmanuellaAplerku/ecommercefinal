@@ -274,7 +274,7 @@ if (isset($_GET['message'])) {
 						</table>
 						<div class="cart-buttons">
 
-							<?php if (isset($uid) && isset($role)) { ?>
+							<?php if (isset($uid)) { ?>
 
 								<a href="../view/payment_form.php?amount=<?php echo $total; ?>" class="boxed-btn black">Check Out</a>
 							<?php } else { ?>
@@ -308,8 +308,8 @@ if (isset($_GET['message'])) {
 
 
 
-	 <!-- footer -->
-	 <div class="footer-area">
+	 <!--footer-->
+	<div class="footer-area">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-3 col-md-6">
@@ -322,7 +322,9 @@ if (isset($_GET['message'])) {
 					<div class="footer-box get-in-touch">
 						<h2 class="widget-title">Get in Touch</h2>
 						<ul>
+							
 							<li>revampwithd@gmail.com</li>
+							
 						</ul>
 					</div>
 				</div>
@@ -330,9 +332,9 @@ if (isset($_GET['message'])) {
 					<div class="footer-box pages">
 						<h2 class="widget-title">Pages</h2>
 						<ul>
-							<li><a href="index.php">Home</a></li>
-							<li><a href="./view/about.php">About</a></li>
-							<li><a href=".view/shop.php">Shop</a></li>
+							<li><a href="../index.php">Home</a></li>
+							<li><a href="about.php">About</a></li>
+							<li><a href="shop.php">Shop</a></li>
 							
 						</ul>
 					</div>

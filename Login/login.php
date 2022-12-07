@@ -27,8 +27,6 @@ if (isset($_GET['message'])) {
 	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
 	<!-- fontawesome -->
 	<link rel="stylesheet" href="../assets/css/all.min.css">
-	<!-- bootstrap -->
-	<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
 	<!-- owl carousel -->
 	<link rel="stylesheet" href="../assets/css/owl.carousel.css">
 	<!-- magnific popup -->
@@ -163,6 +161,6 @@ if (isset($_GET['message'])) {
     }
   </script>
 
-  <!-- <script src="../assets/js/loginVal.js"></script> -->
+  <script src="../assets/js/loginVal.js"></script>
 </body>
 <html>

@@ -304,12 +304,12 @@ $image = './assets/img/products/';
 						<ul>
 							<li><a href="index.php">Home</a></li>
 							<li><a href="./view/about.php">About</a></li>
-							<li><a href=".view/shop.php">Shop</a></li>
+							<li><a href="./view/shop.php">Shop</a></li>
 
 						</ul>
 					</div>
 				</div>
-				
+
 				<div class="col-lg-3 col-md-6">
 					<div class="footer-box get-in-touch">
 						<h2 class="widget-title">Get in Touch</h2>

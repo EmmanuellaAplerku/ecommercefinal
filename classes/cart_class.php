@@ -40,6 +40,14 @@ class cart_class extends db_connection
         $mysql = "SELECT * FROM `cart` WHERE p_id = '$prod_id' AND c_id='$cid'";
         return $this->db_fetch_all($mysql);
     }
+
+    function select_one_cart_gst_cls($prod_id, $ipadd)
+    {
+        $mysql = "SELECT * FROM `cart` WHERE p_id = '$prod_id' AND ip_add='$ipadd'";
+        return $this->db_fetch_all($mysql);
+    }
+
+
     //Remove from cart when customer is logged in
     function remove_from_cart_cls($pid, $cid)
     {
@@ -58,6 +66,12 @@ class cart_class extends db_connection
     function update_quant_cls($pid, $newquant, $cid)
     {
         $sql = "UPDATE `cart` SET qty = '$newquant' WHERE p_id='$pid' AND c_id='$cid'";
+        return $this->db_query($sql);
+    }
+    //Update product quantity in cart when not logged in
+    function update_quant_gst_cls($pid, $newquant, $ipadd)
+    {
+        $sql = "UPDATE `cart` SET qty = '$newquant' WHERE p_id='$pid' AND ip_add='$ipadd'";
         return $this->db_query($sql);
     }
 

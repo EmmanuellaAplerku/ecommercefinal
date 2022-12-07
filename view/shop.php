@@ -200,7 +200,7 @@ $role = $_SESSION['role'] ?? null;
 	
 		
 
-	<!-- footer -->
+	<!--footer-->
 	<div class="footer-area">
 		<div class="container">
 			<div class="row">
@@ -224,9 +224,9 @@ $role = $_SESSION['role'] ?? null;
 					<div class="footer-box pages">
 						<h2 class="widget-title">Pages</h2>
 						<ul>
-							<li><a href="index.php">Home</a></li>
-							<li><a href="./view/about.php">About</a></li>
-							<li><a href=".view/shop.php">Shop</a></li>
+							<li><a href="../index.php">Home</a></li>
+							<li><a href="about.php">About</a></li>
+							<li><a href="shop.php">Shop</a></li>
 							
 						</ul>
 					</div>

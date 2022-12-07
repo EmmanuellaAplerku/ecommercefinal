@@ -27,8 +27,6 @@ if (isset($_GET['message'])) {
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
   <!-- fontawesome -->
   <link rel="stylesheet" href="../assets/css/all.min.css">
-  <!-- bootstrap -->
-  <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
   <!-- owl carousel -->
   <link rel="stylesheet" href="../assets/css/owl.carousel.css">
   <!-- magnific popup -->
@@ -141,7 +139,11 @@ if (isset($_GET['message'])) {
                     </div>
 
                   </form>
-
+                  <div class="form-check d-flex justify-content-center mb-5">
+                      <label class="form-check-label" for="form2Example3">
+                        Already have an account? <a href="./login.php">Login here</a>
+                      </label>
+                    </div>
                 </div>
                 <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
 
@@ -185,6 +187,8 @@ if (isset($_GET['message'])) {
 
     }
   </script>
+
+  <script src="../assets/js/formvalidation.js"></script>
 
 </body>
 <html>
