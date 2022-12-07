@@ -416,7 +416,7 @@ if (isset($_GET['message'])) {
 				icon: 'success',
 				confirmButtonText: 'Okay'
 			}).then(()=>{
-				window.history.back()
+				window.history.back();
 			})
 		} else {
 
